@@ -1,0 +1,22 @@
+@use '../../../theme/common' as *;
+
+.z-input{
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--z-color-primary);
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 32px;
+  line-height: 1;
+  padding: 1px 10px;
+  .z-input__wrapper{
+    display: flex;
+    .z-input__inner{
+      padding: 0;
+      outline: 0;
+      border: none;
+      background: 0 0;
+      box-sizing: border-box;
+    }
+  }
+}

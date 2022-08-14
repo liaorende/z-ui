@@ -1,0 +1,24 @@
+{
+  "name": "z-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@z-ui/components": "workspace:^1.0.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.4",
+    "sass": "^1.54.4",
+    "typescript": "^4.7.4",
+    "unplugin-vue-define-options": "^0.8.3",
+    "vite": "^2.9.15",
+    "vue-tsc": "^0.40.1"
+  }
+}
