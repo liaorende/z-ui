@@ -12,17 +12,25 @@
   <z-button plain icon="Search">按钮</z-button>
   <z-button plain>
     搜索<z-icon class="z-icon--right"><Search /></z-icon>
-  </z-button><br />
+  </z-button>
+  <br />
   input组件
+  <br />
   <z-input v-model="value" @input="onInput" @change="onChange"
-    maxlength="10"
     class="custom-input"
-    placeholder="test"
     prefixIcon="Search"
     style="width: 190px"
+    showWordLimit
+    maxlength="30"
   />
-  <div>{{value}}</div>
-
+  <br />
+  <z-input v-model="value" @input="onInput" @change="onChange"
+    class="custom-input"
+    suffixIcon="Search"
+    style="width: 190px"
+    showWordLimit
+    maxlength="20"
+  />
 
 </template>
 <script setup lang="ts">

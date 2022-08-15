@@ -17,6 +17,9 @@ export const inputProps = {
   },
   inputStyle: {
     type: Object
+  },
+  showWordLimit: {
+    type: Boolean
   }
 }
 
