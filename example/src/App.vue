@@ -31,7 +31,8 @@
     showWordLimit
     maxlength="20"
   />
-
+  <br />
+  <z-checkbox label="选项1" />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';

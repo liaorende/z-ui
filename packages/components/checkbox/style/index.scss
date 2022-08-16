@@ -1,0 +1,32 @@
+.z-checkbox{
+  --checkbox-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  font-size: var(--checkbox-size);
+  user-select: none;
+  cursor: pointer;
+  .z-checkbox__input,.z-checkbox__label{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+  }
+  .z-checkbox__input{
+    .z-checkbox__original{
+      opacity: 0;
+      outline: 0;
+      position: absolute;
+      margin: 0;
+      width: 0;
+      height: 0;
+      z-index: -1;
+    }
+    .z-checkbox__inner{
+      width: var(--checkbox-size);
+      height: var(--checkbox-size);
+      border: 1px solid #DCDFE6;
+      border-radius: 2px;
+    }
+  }
+}
