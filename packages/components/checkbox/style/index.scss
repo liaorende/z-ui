@@ -1,3 +1,5 @@
+@use '../../../theme/common';
+
 .z-checkbox{
   --checkbox-size: 14px;
   display: inline-flex;
@@ -23,10 +25,36 @@
       z-index: -1;
     }
     .z-checkbox__inner{
+      position: relative;
       width: var(--checkbox-size);
       height: var(--checkbox-size);
       border: 1px solid #DCDFE6;
       border-radius: 2px;
+      transition: all .15s;
+      box-sizing: border-box;
+      &::after{
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        border: 1px solid var(--z-color-white);
+        border-left: 0;
+        border-top: 0;
+        width: 3px;
+        height: 7px;
+        transform: rotate(45deg) scaleY(0);
+        transition: transform .15s ease-in 50ms;
+        transform-origin: center;
+      }
+    }
+    &.is-checked{
+      .z-checkbox__inner{
+        background-color: var(--z-color-primary);
+        border-color: var(--z-color-primary);
+        &::after{
+          transform: rotate(45deg) scaleY(1);
+        }
+      }
     }
   }
 }

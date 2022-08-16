@@ -32,7 +32,13 @@
     maxlength="20"
   />
   <br />
-  <z-checkbox label="选项1" />
+  <z-checkbox v-model="checked" label="选项1" />
+  <br />
+  <z-checkbox-group v-model="checkedList">
+    <z-checkbox label="选项2" />
+    <z-checkbox label="选项2" />
+  </z-checkbox-group>
+  {{checkedList}}
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -44,6 +50,11 @@ const onInput = (data: string) => {
 const onChange = (data: string) => {
   console.log('onChange--',data)
 }
+
+const checked = ref(false)
+const checkedList = ref([])
+
+
 </script>
 <style>
 #app{

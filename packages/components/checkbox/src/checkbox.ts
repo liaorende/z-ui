@@ -1,9 +1,17 @@
 import type { ExtractPropTypes } from 'vue'
 
+export const checkboxGroupProps = {
+  modelValue: {
+    type: Array<number|string>
+  },
+  label: {
+    type: String
+  }
+}
+
 export const checkboxProps = {
   modelValue: {
-    type: Boolean,
-    default: false
+    type: Boolean
   },
   label: {
     type: String
@@ -11,11 +19,10 @@ export const checkboxProps = {
 }
 
 export const checkboxEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string',
-  input: (value: String) => typeof value === 'string',
-  change: (value: String) => typeof value === 'string',
-  blur: (evt: FocusEvent) => evt instanceof FocusEvent,
-  focus: (evt: FocusEvent) => evt instanceof FocusEvent,
+  ['update:modelValue']: (value: Boolean) => typeof value === 'boolean',
+}
+export const checkboxGroupEmits = {
+  ['update:modelValue']: (value: Array<number|string>) => Array.isArray(value),
 }
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>
