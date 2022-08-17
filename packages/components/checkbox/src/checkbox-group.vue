@@ -9,7 +9,7 @@
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
-import { computed, provide, ref, StyleValue, useAttrs, useSlots } from 'vue';
+import { computed, provide } from 'vue';
 import { checkboxGroupProps, checkboxGroupEmits } from "./checkbox";
 defineOptions({
   name: 'z-checkbox-group',
@@ -23,8 +23,7 @@ const modelValue = computed({
     return props.modelValue
   },
   set(val: any){
-    emit('update:modelValue', val)
-    console.log('group set--',val)
+    // emit('update:modelValue', val)
   }
 })
 const changeEvent = (val: Array<number|string>) => {

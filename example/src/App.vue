@@ -35,10 +35,20 @@
   <z-checkbox v-model="checked" label="选项1" />
   <br />
   <z-checkbox-group v-model="checkedList">
-    <z-checkbox label="选项2" />
+    <z-checkbox label="选项1" />
     <z-checkbox label="选项2" />
   </z-checkbox-group>
-  {{checkedList}}
+  <br />
+  <z-radio-group v-model="radio">
+    <z-radio label="1">Option 1</z-radio>
+    <z-radio label="2">Option 2</z-radio>
+  </z-radio-group>
+  radio: {{radio}}
+  <input type="radio" id="one" value="1" v-model="radio" />
+	<label for="one">One</label>
+
+	<input type="radio" id="two" value="2" v-model="radio" />
+  <label for="two">Two</label>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -52,9 +62,9 @@ const onChange = (data: string) => {
 }
 
 const checked = ref(false)
-const checkedList = ref([])
+const checkedList = ref(['选项1','选项'])
 
-
+const radio = ref('1')
 </script>
 <style>
 #app{

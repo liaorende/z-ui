@@ -2,7 +2,8 @@ import type { ExtractPropTypes } from 'vue'
 
 export const checkboxGroupProps = {
   modelValue: {
-    type: Array<number|string>
+    type: Array<number|string>,
+    default: () => [],
   },
   label: {
     type: String
@@ -11,7 +12,7 @@ export const checkboxGroupProps = {
 
 export const checkboxProps = {
   modelValue: {
-    type: Boolean
+    type: [Array<number|string>, Boolean]
   },
   label: {
     type: String
