@@ -32,15 +32,22 @@
     maxlength="20"
   />
   <br />
-  <z-checkbox v-model="checked" label="选项1" disabled />
+  <z-checkbox v-model="checked" label="test" @change="test">
+    aaaa
+  </z-checkbox>
+  <z-checkbox v-model="checkAll" :indeterminate="isIndeterminate"
+    @change="handleCheckAllChange"
+  >
+    选中全部
+  </z-checkbox>
   <br />
-  <z-checkbox-group v-model="checkedList" disabled>
+  <z-checkbox-group v-model="checkedList" @change="handleCheckedChange">
     <z-checkbox label="选项1" />
     <z-checkbox label="选项2" />
   </z-checkbox-group>
   <br />
   <z-radio-group v-model="radio">
-    <z-radio label="单选1">Option 1</z-radio>
+    <z-radio label="单选1" disabled>Option 1</z-radio>
     <z-radio label="单选2">Option 2</z-radio>
   </z-radio-group>
   radio: {{radio}}
@@ -57,9 +64,25 @@ const onChange = (data: string) => {
 }
 
 const checked = ref(false)
-const checkedList = ref(['选项1','选项'])
+const checkAll = ref(false)
+const isIndeterminate = ref(true)
+const test = (value: boolean)=>{
+  console.log('value--->',value)
+} 
+const handleCheckAllChange = (val: boolean) => {
+  checkedList.value = val ? list : []
+  isIndeterminate.value = false
+}
+const handleCheckedChange = (value: string[]) => {
+  console.log('handleCheckedChange--',value)
+  const checkedCount = value.length
+  checkAll.value = checkedCount === list.length
+  isIndeterminate.value = checkedCount > 0 && checkedCount < list.length
+}
+const list = ['选项1','选项2']
+const checkedList = ref(['选项1'])
 
-const radio = ref('1')
+const radio = ref('单选1')
 </script>
 <style>
 #app{

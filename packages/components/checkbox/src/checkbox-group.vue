@@ -23,11 +23,12 @@ const modelValue = computed({
     return props.modelValue
   },
   set(val: any){
-    // emit('update:modelValue', val)
+    // changeEvent(val)
   }
 })
 const changeEvent = (val: Array<number|string>) => {
   emit('update:modelValue', val)
+  emit('change', val)
 }
 provide('CheckboxGroup', {
   name: 'z-checkbox-group',

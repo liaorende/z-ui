@@ -2,7 +2,6 @@
 
 .z-radio-group{
   --radio-size: 14px;
-  // display: inline-flex;
   .z-radio{
     display: inline-flex;
     align-items: center;
@@ -11,6 +10,7 @@
     font-size: 14px;
     margin-right: 20px;
     user-select: none;
+    cursor: pointer;
     &:last-child{
       margin-right: 0;
     }
@@ -77,6 +77,13 @@
     }
     &.is-disabled{
       cursor: not-allowed;
+    }
+    &:hover:not(.is-disabled){
+      .z-radio__input{
+        .z-radio__inner{
+          border-color: var(--z-color-primary);
+        }
+      }
     }
   }
 }

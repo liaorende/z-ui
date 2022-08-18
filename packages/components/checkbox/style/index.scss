@@ -77,8 +77,34 @@
         }
       }
     }
+    &.is-indeterminate{
+      .z-checkbox__inner{
+        background-color: var(--z-color-white);
+        // border-color: var(--z-color-white);
+        &::after{
+          width: 5px;
+          height: 5px;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          border: 1px solid var(--z-color-primary);
+          background-color: var(--z-color-primary);
+          transition: none;
+          transform: scaleY(1);
+        }
+      }
+    }
   }
   &.is-disabled{
     cursor: not-allowed;
+  }
+  &:hover:not(.is-disabled){
+    .z-checkbox__input{
+      .z-checkbox__inner{
+        border-color: var(--z-color-primary);
+      }
+    }
   }
 }

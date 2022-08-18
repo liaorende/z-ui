@@ -11,26 +11,28 @@
     <span :class="[
       ns.e('input'),
       ns.is('checked',isChecked),
-      ns.is('disabled',isDisabled)
+      ns.is('disabled',isDisabled),
+      ns.is('indeterminate',props.indeterminate)
     ]">
       <input
         v-model="modelValue"
         type="checkbox"
         :class="ns.e('original')"
         @change="handleChange"
-        :value="props.label"
+        :value="label"
         :disabled="isDisabled"
       />
       <span :class="ns.e('inner')"></span>
     </span>
-    <span v-if="props.label" :class="ns.e('label')">
-      {{props.label}}
+    <span v-if="label || $slots.default" :class="ns.e('label')">
+      <slot />
+      <template v-if="!$slots.default"> {{label}} </template>
     </span>
   </label>
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
-import { computed, inject } from 'vue';
+import { computed, inject, useSlots } from 'vue';
 import '../style/index.scss'
 import { checkboxProps, checkboxEmits } from "./checkbox";
 defineOptions({
@@ -50,12 +52,18 @@ const modelValue = computed({
   },
   set(val: any){
     if(isGroup.value){
+      console.log('isGroup')
       checkboxGroup.changeEvent(val)
     }else{
       emit('update:modelValue', val)
+      emit('change', val)
     }
   }
 })
+const slots = useSlots()
+// const label = computed(()=>{
+//   return props.label ? props.label : slots
+// })
 const isChecked = computed(()=>{
   const _value = modelValue.value
   if(typeof _value === 'boolean'){
@@ -67,11 +75,11 @@ const isChecked = computed(()=>{
 const isDisabled = computed(()=>{
   return checkboxGroup.disabled ? checkboxGroup.disabled : props.disabled
 })
-console.log('isDisabled--',isDisabled)
 const onClickRoot = () => {
   // emit('update:modelValue', !props.modelValue)
 }
-const handleChange = (event: Event) => {
-  // console.log('handleChange--',event)
+const handleChange = () => {
+  // emit('change', modelValue.value)
+  // checkboxGroup.changeEvent(modelValue.value)
 }
 </script>
