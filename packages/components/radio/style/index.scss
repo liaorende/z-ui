@@ -7,6 +7,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    height: 32px;
+    font-size: 14px;
+    margin-right: 20px;
+    user-select: none;
+    &:last-child{
+      margin-right: 0;
+    }
     .z-radio__input,.z-radio__label{
       display: inline-flex;
       align-items: center;
@@ -31,7 +38,7 @@
         height: var(--radio-size);
         border: 1px solid #DCDFE6;
         border-radius: 100%;
-        // transition: all .15s;
+        transition: all .15s;
         box-sizing: border-box;
         &::after{
           content: "";
@@ -45,7 +52,8 @@
           width: 4px;
           height: 4px;
           background-color: var(--z-color-white);
-          // transition: transform .15s ease-in 50ms;
+          transition: transform .15s ease-in;
+          transform: scale(0);
         }
       }
       &.is-checked{
@@ -53,7 +61,7 @@
           background-color: var(--z-color-primary);
           border-color: var(--z-color-primary);
           &::after{
-            // transform: scaleY(1);
+            transform: scale(1);
           }
         }
       }

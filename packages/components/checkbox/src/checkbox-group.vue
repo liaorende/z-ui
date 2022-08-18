@@ -31,6 +31,7 @@ const changeEvent = (val: Array<number|string>) => {
 }
 provide('CheckboxGroup', {
   name: 'z-checkbox-group',
+  disabled: props.disabled,
   modelValue,
   changeEvent,
 })

@@ -7,6 +7,9 @@ export const checkboxGroupProps = {
   },
   label: {
     type: String
+  },
+  disabled: {
+    type: Boolean
   }
 }
 
@@ -18,8 +21,7 @@ export const checkboxProps = {
     type: String
   },
   disabled: {
-    type: Boolean,
-    default: false
+    type: Boolean
   }
 }
 

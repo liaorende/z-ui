@@ -8,6 +8,11 @@
   font-size: var(--checkbox-size);
   user-select: none;
   cursor: pointer;
+  margin-right: 20px;
+  user-select: none;
+  &:last-child{
+    margin-right: 0;
+  }
   .z-checkbox__input,.z-checkbox__label{
     display: inline-flex;
     align-items: center;
@@ -63,6 +68,13 @@
       }
       +.z-checkbox__label{
         color: #a8abb2;
+      }
+    }
+    &.is-disabled.is-checked{
+      .z-checkbox__inner{
+        &::after{
+          border-color: #a9abb2;
+        }
       }
     }
   }

@@ -4,13 +4,13 @@
       ns.b(),
       $attrs.class,
       ns.is('checked',isChecked),
-      ns.is('disabled',props.disabled)
+      ns.is('disabled',isDisabled)
     ]"
   >
     <span :class="[
       ns.e('input'),
       ns.is('checked',isChecked),
-      ns.is('disabled',props.disabled)
+      ns.is('disabled',isDisabled)
     ]">
       <input
         type="radio"
@@ -18,7 +18,7 @@
         v-model="modelValue"
         @change="handleChange"
         :value="props.label"
-        :disabled="props.disabled"
+        :disabled="isDisabled"
       />
       <span :class="ns.e('inner')"></span>
     </span>
@@ -28,9 +28,9 @@
   </label>
 </template>
 <script setup lang="ts">
+import '../style/index.scss'
 import { useNamespace } from '@z-ui/utils';
 import { computed, inject } from 'vue';
-import '../style/index.scss'
 import { radioProps, radioEmits } from "./radio";
 defineOptions({
   name: 'z-radio',
@@ -51,6 +51,9 @@ const modelValue = computed({
 })
 const isChecked = computed(()=>{
   return modelValue.value === props.label
+})
+const isDisabled = computed(()=>{
+  return radioGroup.disabled ? radioGroup.disabled : props.disabled
 })
 const handleChange = (event: Event) => {
   let { value } = event.target as HTMLInputElement

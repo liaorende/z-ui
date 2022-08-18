@@ -27,6 +27,7 @@ const changeEvent = (val: String) =>{
   emit('update:modelValue', val)
 }
 provide('RadioGroup', {
+  disabled: props.disabled,
   modelValue,
   changeEvent
 })

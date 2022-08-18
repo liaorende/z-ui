@@ -4,14 +4,14 @@
       ns.b(),
       $attrs.class,
       ns.is('checked',isChecked),
-      ns.is('disabled',props.disabled),
+      ns.is('disabled',isDisabled),
     ]"
     @click="onClickRoot"
   >
     <span :class="[
       ns.e('input'),
       ns.is('checked',isChecked),
-      ns.is('disabled',props.disabled)
+      ns.is('disabled',isDisabled)
     ]">
       <input
         v-model="modelValue"
@@ -19,7 +19,7 @@
         :class="ns.e('original')"
         @change="handleChange"
         :value="props.label"
-        :disabled="props.disabled"
+        :disabled="isDisabled"
       />
       <span :class="ns.e('inner')"></span>
     </span>
@@ -64,6 +64,10 @@ const isChecked = computed(()=>{
     return _value.includes(props.label)
   }
 })
+const isDisabled = computed(()=>{
+  return checkboxGroup.disabled ? checkboxGroup.disabled : props.disabled
+})
+console.log('isDisabled--',isDisabled)
 const onClickRoot = () => {
   // emit('update:modelValue', !props.modelValue)
 }
