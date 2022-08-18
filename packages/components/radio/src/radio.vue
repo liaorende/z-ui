@@ -3,11 +3,14 @@
     :class="[
       ns.b(),
       $attrs.class,
+      ns.is('checked',isChecked),
+      ns.is('disabled',props.disabled)
     ]"
   >
     <span :class="[
       ns.e('input'),
-      ns.is('checked',isChecked)
+      ns.is('checked',isChecked),
+      ns.is('disabled',props.disabled)
     ]">
       <input
         type="radio"
@@ -15,6 +18,7 @@
         v-model="modelValue"
         @change="handleChange"
         :value="props.label"
+        :disabled="props.disabled"
       />
       <span :class="ns.e('inner')"></span>
     </span>

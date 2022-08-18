@@ -3,12 +3,15 @@
     :class="[
       ns.b(),
       $attrs.class,
+      ns.is('checked',isChecked),
+      ns.is('disabled',props.disabled),
     ]"
     @click="onClickRoot"
   >
     <span :class="[
       ns.e('input'),
-      ns.is('checked',isChecked)
+      ns.is('checked',isChecked),
+      ns.is('disabled',props.disabled)
     ]">
       <input
         v-model="modelValue"
@@ -16,6 +19,7 @@
         :class="ns.e('original')"
         @change="handleChange"
         :value="props.label"
+        :disabled="props.disabled"
       />
       <span :class="ns.e('inner')"></span>
     </span>

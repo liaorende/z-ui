@@ -56,5 +56,17 @@
         }
       }
     }
+    &.is-disabled{
+      .z-checkbox__inner{
+        background-color: #f5f7fa;
+        border-color: #dcdfe6;
+      }
+      +.z-checkbox__label{
+        color: #a8abb2;
+      }
+    }
+  }
+  &.is-disabled{
+    cursor: not-allowed;
   }
 }

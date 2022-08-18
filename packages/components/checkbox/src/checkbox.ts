@@ -16,6 +16,10 @@ export const checkboxProps = {
   },
   label: {
     type: String
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 }
 

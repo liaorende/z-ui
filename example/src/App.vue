@@ -32,7 +32,7 @@
     maxlength="20"
   />
   <br />
-  <z-checkbox v-model="checked" label="选项1" />
+  <z-checkbox v-model="checked" label="选项1" disabled />
   <br />
   <z-checkbox-group v-model="checkedList">
     <z-checkbox label="选项1" />
@@ -40,7 +40,7 @@
   </z-checkbox-group>
   <br />
   <z-radio-group v-model="radio">
-    <z-radio label="1">Option 1</z-radio>
+    <z-radio label="1" disabled>Option 1</z-radio>
     <z-radio label="2">Option 2</z-radio>
   </z-radio-group>
   radio: {{radio}}

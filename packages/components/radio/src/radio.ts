@@ -3,6 +3,9 @@ import type { ExtractPropTypes } from 'vue'
 export const radioProps = {
   label: {
     type: String
+  },
+  disabled: {
+    type: Boolean
   }
 }
 

@@ -7,7 +7,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
     .z-radio__input,.z-radio__label{
       display: inline-flex;
       align-items: center;
@@ -58,6 +57,18 @@
           }
         }
       }
+      &.is-disabled{
+        .z-radio__inner{
+          background-color: #f5f7fa;
+          border-color: #e4e7ed;
+          &::after{
+            background-color: #a9abb2;
+          }
+        }
+      }
+    }
+    &.is-disabled{
+      cursor: not-allowed;
     }
   }
 }
