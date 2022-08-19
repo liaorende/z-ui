@@ -51,6 +51,14 @@
     <z-radio label="单选2">Option 2</z-radio>
   </z-radio-group>
   radio: {{radio}}
+  <br />
+  <z-button @click="dialogVisible = true">
+    打开弹窗
+  </z-button>
+  <z-dialog title="test title" v-model="dialogVisible">
+
+  </z-dialog>
+  <!-- <z-overlay></z-overlay> -->
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -81,8 +89,9 @@ const handleCheckedChange = (value: string[]) => {
 }
 const list = ['选项1','选项2']
 const checkedList = ref(['选项1'])
-
 const radio = ref('单选1')
+const dialogVisible = ref(false)
+
 </script>
 <style>
 #app{
