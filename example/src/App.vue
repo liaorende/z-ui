@@ -56,7 +56,10 @@
     打开弹窗
   </z-button>
   <z-dialog title="test title" v-model="dialogVisible">
-
+    <span>弹窗内容</span>
+    <template #footer>
+      弹窗底部
+    </template>
   </z-dialog>
   <!-- <z-overlay></z-overlay> -->
 </template>
@@ -96,5 +99,6 @@ const dialogVisible = ref(false)
 <style>
 #app{
   padding: 20px;
+  height: 3000px;
 }
 </style>

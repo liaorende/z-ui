@@ -1,0 +1,46 @@
+@use '../../../theme/common';
+
+.z-dialog{
+  margin: 30vh auto 0;
+  width: 50%;
+  background-color: var(--z-color-white);
+  .z-dialog__header{
+    padding: 20px 20px 10px;
+  }
+  .z-dialog__body{
+    padding: 30px 20px;
+  }
+  .z-dialog__footer{
+    padding: 10px 20px 20px;
+  }
+}
+.dialog-fade-enter-active{
+  animation: modal-fade 0.2s;
+  .z-dialog{
+    animation: dialog-fade 0.2s;
+  }
+}
+.dialog-fade-leave-active{
+  animation: modal-fade 0.2s reverse;
+  .z-dialog{
+    animation: dialog-fade 0.2s reverse;
+  }
+}
+@keyframes modal-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dialog-fade {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
