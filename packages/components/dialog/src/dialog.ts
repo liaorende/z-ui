@@ -8,6 +8,9 @@ export const dialogProps = {
   title: {
     type: String,
   },
+  width: {
+    type: String
+  }
 }
 
 export const dialogEmits = {

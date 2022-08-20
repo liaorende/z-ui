@@ -7,11 +7,15 @@
         :class="[
           ns.b()
         ]"
+        :style="{'width':width}"
         v-if="isRendered"
         @click.stop
       >
         <header :class="ns.e('header')">
           <span>{{title}}</span>
+          <z-icon :class="ns.e('headerbtn')" @click="emit('update:modelValue',false)">
+            <Close />
+          </z-icon>
         </header>
         <div :class="ns.e('body')">
           <slot />
@@ -26,9 +30,10 @@
 <script setup lang="ts">
 import '../style/index.scss';
 import ZOverlay from "@z-ui/components/overlay";
-import { useNamespace } from '@z-ui/utils';
-import { computed, ref, watch } from 'vue';
+import { useNamespace, CloseComponents } from '@z-ui/utils';
+import { ref, watch } from 'vue';
 import { dialogProps, dialogEmits } from "./dialog";
+
 defineOptions({
   name: 'z-dialog'
 })
@@ -54,4 +59,5 @@ const useLockScreen = (trigger: boolean) => {
     _bodyClass.remove(_className)
   }
 }
+const { Close } = CloseComponents
 </script>

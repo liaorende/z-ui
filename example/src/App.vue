@@ -58,7 +58,8 @@
   <z-dialog title="test title" v-model="dialogVisible">
     <span>弹窗内容</span>
     <template #footer>
-      弹窗底部
+      <z-button plain>关闭</z-button>
+      <z-button>确认</z-button>
     </template>
   </z-dialog>
   <!-- <z-overlay></z-overlay> -->
