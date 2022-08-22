@@ -1,6 +1,7 @@
 
 <template>
   button组件<br />
+  <!-- <el-button>dad</el-button> -->
   <z-button plain>按钮</z-button>
   <z-button plain disabled>按钮测试</z-button><br />
   <z-button>test</z-button>
@@ -62,7 +63,6 @@
       <z-button>确认</z-button>
     </template>
   </z-dialog>
-  <!-- <z-overlay></z-overlay> -->
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';

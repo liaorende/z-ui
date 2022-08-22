@@ -1,6 +1,6 @@
-export const filterAttrs = (attrs: {}) => {
-  let inputAttrs = {}
-  let excludeArr = Object.entries(attrs).filter((attr: [string,any]) => {
+export const filterAttrs = (attrs: any) => {
+  let inputAttrs: any = {}
+  let excludeArr = Object.entries(attrs).filter((attr) => {
     return attr[0] !== 'style' && attr[0] !== 'class'
   })
   for (const key of excludeArr) {

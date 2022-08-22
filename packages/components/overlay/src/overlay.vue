@@ -8,7 +8,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import '../style/index.scss'
+
 import { useNamespace } from '@z-ui/utils';
 defineOptions({
   name: 'z-overlay'

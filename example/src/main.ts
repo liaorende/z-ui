@@ -1,6 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import ZUi from "@z-ui/components";
+import '@z-ui/theme'
+import { Button } from "vue3-yytest";
+
+// import ZUi from "vue3-yytest";
+// import { ElButton } from 'element-plus/lib';
+// import test from "./test";
+// import 'vue3-yytest/es/style.css'
+// console.log('ZUi--',ZUi)
+// console.log('ElementPlus--',ElementPlus)
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 

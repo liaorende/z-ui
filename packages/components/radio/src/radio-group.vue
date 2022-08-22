@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
 import { computed, provide } from 'vue';
-import '../style/index.scss'
+
 import { radioGroupProps, radioGroupEmits } from "./radio";
 defineOptions({
   name: 'z-radio-group',

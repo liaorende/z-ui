@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
 import { computed, inject, useSlots } from 'vue';
-import '../style/index.scss'
+
 import { checkboxProps, checkboxEmits } from "./checkbox";
 defineOptions({
   name: 'z-checkbox',

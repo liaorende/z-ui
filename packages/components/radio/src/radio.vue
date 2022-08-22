@@ -28,7 +28,7 @@
   </label>
 </template>
 <script setup lang="ts">
-import '../style/index.scss'
+
 import { useNamespace } from '@z-ui/utils';
 import { computed, inject } from 'vue';
 import { radioProps, radioEmits } from "./radio";

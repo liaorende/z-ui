@@ -28,7 +28,7 @@
   </Transition>
 </template>
 <script setup lang="ts">
-import '../style/index.scss';
+;
 import ZOverlay from "@z-ui/components/overlay";
 import { useNamespace, CloseComponents } from '@z-ui/utils';
 import { ref, watch } from 'vue';

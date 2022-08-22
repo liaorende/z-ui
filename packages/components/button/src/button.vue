@@ -20,7 +20,7 @@
   </button>
 </template>
 <script setup lang="ts">
-import '../style/index.scss'
+
 import { buttonProps } from "./button";
 import { useNamespace } from "@z-ui/utils";
 import ZIcon from "@z-ui/components/icon";
