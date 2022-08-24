@@ -17,6 +17,11 @@
   <br />
   input组件
   <br />
+  <z-input @input="onInput" @change="onChange"
+    class="custom-input"
+    style="width: 190px"
+    maxlength="30"
+  /><br />
   <z-input v-model="value" @input="onInput" @change="onChange"
     class="custom-input"
     prefixIcon="Search"
@@ -70,6 +75,7 @@
       <z-button @click="dialogVisible2 = true">确认</z-button>
     </template>
   </z-dialog>
+  <z-select />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';

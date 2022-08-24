@@ -6,6 +6,6 @@ const ZRadio = withInstall(Radio)
 const ZRadioGroup = withInstall(RadioGroup)
 
 export {
-  ZRadio,
-  ZRadioGroup
+  ZRadio as Radio,
+  ZRadioGroup as RadioGroup
 };
