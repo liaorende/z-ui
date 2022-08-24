@@ -57,10 +57,17 @@
     打开弹窗
   </z-button>
   <z-dialog title="test title" v-model="dialogVisible">
-    <span>弹窗内容</span>
+    <span>弹窗1111</span>
     <template #footer>
       <z-button plain>关闭</z-button>
-      <z-button>确认</z-button>
+      <z-button @click="dialogVisible2 = true">确认</z-button>
+    </template>
+  </z-dialog>
+  <z-dialog title="test title" v-model="dialogVisible2">
+    <span>弹窗2222</span>
+    <template #footer>
+      <z-button plain>关闭</z-button>
+      <z-button @click="dialogVisible2 = true">确认</z-button>
     </template>
   </z-dialog>
 </template>
@@ -95,6 +102,7 @@ const list = ['选项1','选项2']
 const checkedList = ref(['选项1'])
 const radio = ref('单选1')
 const dialogVisible = ref(false)
+const dialogVisible2 = ref(false)
 
 </script>
 <style>

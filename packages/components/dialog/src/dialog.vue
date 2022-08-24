@@ -2,7 +2,11 @@
   <Transition
     name="dialog-fade"
   >
-    <z-overlay v-show="modelValue" @click="emit('update:modelValue',false)">
+    <z-overlay 
+      v-show="modelValue" 
+      @click="emit('update:modelValue',false)"
+      :z-index="zIndex"
+    >
       <div
         :class="[
           ns.b()
@@ -30,8 +34,8 @@
 <script setup lang="ts">
 ;
 import ZOverlay from "@z-ui/components/overlay";
-import { useNamespace, CloseComponents } from '@z-ui/utils';
-import { ref, watch } from 'vue';
+import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils';
+import { computed, ref, watch } from 'vue';
 import { dialogProps, dialogEmits } from "./dialog";
 
 defineOptions({
@@ -40,11 +44,15 @@ defineOptions({
 const ns = useNamespace('dialog')
 const props = defineProps(dialogProps)
 const emit = defineEmits(dialogEmits)
+const { nextZIndex } = useZIndex()
 
-let isRendered = ref(false)
+const zIndex = ref(nextZIndex())
+const isRendered = ref(false)
+const hasOtherOverlay = ref(false)
 watch(() => props.modelValue, (value)=>{
   useLockScreen(value)
   if(props.modelValue){
+    zIndex.value = nextZIndex()
     isRendered.value = true
   }
 })
@@ -53,9 +61,13 @@ const useLockScreen = (trigger: boolean) => {
   const _bodyClass = document.body.classList
   const _className = 'z-lock-parent'
   if(trigger){
-    if(_bodyClass.contains(_className)) return
+    if(_bodyClass.contains(_className)) {
+      hasOtherOverlay.value = true
+      return
+    }
     _bodyClass.add(_className)
   }else{
+    if(hasOtherOverlay.value) return
     _bodyClass.remove(_className)
   }
 }
