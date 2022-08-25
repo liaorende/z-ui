@@ -19,6 +19,7 @@
         v-bind="inputAttrs"
         :class="ns.e('inner')"
         :placeholder="props.placeholder"
+        :readonly="readonly"
         :style="inputStyle"
         @input="handleInput"
         @change="handleChange"

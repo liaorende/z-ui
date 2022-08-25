@@ -20,6 +20,10 @@ export const inputProps = {
   },
   showWordLimit: {
     type: Boolean
+  },
+  readonly: {
+    type: Boolean,
+    default: false
   }
 }
 

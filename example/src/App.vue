@@ -53,7 +53,7 @@
   </z-checkbox-group>
   <br />
   <z-radio-group v-model="radio">
-    <z-radio label="单选1" disabled>Option 1</z-radio>
+    <z-radio label="单选1">Option 1</z-radio>
     <z-radio label="单选2">Option 2</z-radio>
   </z-radio-group>
   radio: {{radio}}
@@ -75,7 +75,7 @@
       <z-button @click="dialogVisible2 = true">确认</z-button>
     </template>
   </z-dialog>
-  <z-select />
+  <z-select readonly/>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
