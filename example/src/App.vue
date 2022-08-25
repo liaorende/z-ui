@@ -1,5 +1,6 @@
 
 <template>
+  <z-scrollbar>
   button组件<br />
   <!-- <el-button>dad</el-button> -->
   <z-button plain>按钮</z-button>
@@ -76,6 +77,7 @@
     </template>
   </z-dialog>
   <z-select readonly/>
+  </z-scrollbar>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -114,6 +116,6 @@ const dialogVisible2 = ref(false)
 <style>
 #app{
   padding: 20px;
-  height: 3000px;
+  /* height: 3000px; */
 }
 </style>

@@ -6,13 +6,14 @@ import { Radio, RadioGroup } from './radio'
 import Dialog from './dialog'
 import Overlay from './overlay'
 import Select from './select'
+import Scrollbar from './scrollbar'
 
 import type { App } from 'vue'
 
 // 组件列表
 const components = [
   Button,Input,Icon,Checkbox,CheckboxGroup,Radio,RadioGroup,
-  Dialog,Overlay,Select
+  Dialog,Overlay,Select,Scrollbar
 ] 
 // 使用所有组件
 const install = (app: App)=> {
@@ -31,6 +32,7 @@ export {
   Dialog as ZDialog,
   Overlay as ZOverlay,
   Select as ZSelect,
+  Scrollbar as ZScrollbar,
   install
 }
 export default install 

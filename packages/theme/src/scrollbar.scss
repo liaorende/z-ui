@@ -1,0 +1,24 @@
+.z-scrollbar{
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  .z-scrollbar__wrap{
+    max-height: 200px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .z-scrollbar__bar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    .z-scrollbar__slider{
+      transform: translateY(90%);
+      height: 60px;
+      background-color: red;
+    }
+  }
+}
