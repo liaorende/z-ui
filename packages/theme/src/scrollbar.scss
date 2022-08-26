@@ -3,10 +3,10 @@
   overflow: hidden;
   height: 100%;
   .z-scrollbar__wrap{
-    max-height: 200px;
+    // max-height: 200px;
     overflow: auto;
     &::-webkit-scrollbar {
-      display: none;
+      // display: none;
     }
   }
   .z-scrollbar__bar{
@@ -16,7 +16,7 @@
     width: 8px;
     height: 100%;
     .z-scrollbar__slider{
-      transform: translateY(90%);
+      transform: translateY(0%);
       height: 60px;
       background-color: red;
     }

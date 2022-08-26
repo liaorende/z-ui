@@ -20,6 +20,5 @@ defineOptions({
 })
 const ns = useNamespace('select')
 const props = defineProps(selectProps)
-const readonly = ref(true)
 
 </script>
