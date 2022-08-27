@@ -1,5 +1,5 @@
 export const scrollbarProps = {
-  maxHeight: {
+  height: {
     type: String
   }
 }

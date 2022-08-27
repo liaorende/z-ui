@@ -2,23 +2,55 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  --size: 6px;
   .z-scrollbar__wrap{
     // max-height: 200px;
     overflow: auto;
     &::-webkit-scrollbar {
-      // display: none;
+      display: none;
     }
   }
   .z-scrollbar__bar{
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 8px;
-    height: 100%;
-    .z-scrollbar__slider{
+    &.is-vertical{
+      position: absolute;
       transform: translateY(0%);
-      height: 60px;
-      background-color: red;
+      right: 0;
+      top: 0;
+      width: var(--size);
+      height: 100%;
+      .z-scrollbar__slider{
+        width: var(--size);
+      }
+    }
+    &.is-horizontal{
+      position: absolute;
+      transform: translateX(0%);
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: var(--size);
+      .z-scrollbar__slider{
+        height: var(--size);
+      }
+    }
+    .z-scrollbar__slider{
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      background-color: #909399;
+      opacity: 0.5;
+      &:hover{
+        opacity: 1;
+      }
     }
   }
+}
+.bar-fade-enter-active,
+.bar-fade-leave-active{
+  transition: opacity 0.2s;
+}
+.bar-fade-enter-from,
+.bar-fade-leave-to{
+  opacity: 0;
 }

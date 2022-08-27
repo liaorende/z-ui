@@ -1,67 +1,81 @@
 <template>
-  <div
-    ref="parentRef"
-    :class="[
-      ns.e('bar')
-    ]"
-  >
-    <!-- <div :class="[ns.e('slider'), ns.is('horizontal',true)]"
-      @mousedown="handleScroll"
-    ></div> -->
-    <div ref="barRef" :class="[ns.e('slider'), ns.is('vertical',true)]"
-      :style="barStyle"
-      @mousedown="handleScroll"
-    ></div>
-  </div>
+  <Transition name="bar-fade">
+    <div
+      v-show="scrollbar.isShow"
+      ref="parentRef"
+      :class="[
+        ns.e('bar'),
+        ns.is('vertical',vertical),
+        ns.is('horizontal',horizontal)
+      ]"
+      @mousedown="clickBarHandler"
+    >
+      <div v-if="horizontal" ref="barRef" :class="[ns.e('slider')]"
+        :style="barHorizontalStyle"
+        @mousedown="clickSliderHandler"
+      ></div>
+      <div v-if="vertical" ref="barRef" :class="[ns.e('slider')]"
+        :style="barVerticalStyle"
+        @mousedown="clickSliderHandler"
+      ></div>
+    </div>
+  </Transition>
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
-import { emit } from 'process';
-import { computed, ref } from 'vue';
-import { barProps, barEmits } from "./bar";
+import { computed, inject, ref } from 'vue';
+import { barProps, scrollbarInject, BAR_MAP } from "./bar";
 
+const scrollbar = inject<scrollbarInject>('Scrollbar')
+if (!scrollbar) throw new Error("scrollbar 不存在");
+
+const bar = computed(() => BAR_MAP[props.vertical ? 'vertical' : 'horizontal'])
 const ns = useNamespace('scrollbar')
 const props = defineProps(barProps)
-const emits = defineEmits(barEmits)
 const barRef = ref<HTMLDivElement>()
 const parentRef = ref<HTMLDivElement>()
-const barStyle = computed(()=>{
+const initialScroll = ref(0)
+const initialPosition = ref(0)
+
+const clickSliderHandler = (e: MouseEvent)=> {
+  e.stopPropagation()
+  window.getSelection()?.removeAllRanges()
+  initialPosition.value = e[bar.value.client]
+  initialScroll.value = 
+    scrollbar.wrapElement[bar.value.scroll] *
+    (scrollbar.wrapElement[bar.value.offset] - barRef.value![bar.value.offset]) / 
+    (scrollbar.wrapElement[bar.value.scrollSize] - scrollbar.wrapElement[bar.value.offset])
+  document.addEventListener('mousemove', mouseMoveHandler)
+  document.addEventListener('mouseup', mouseUpHandler)
+}
+const clickBarHandler = (e: MouseEvent)=> {
+  const barHalf = barRef.value![bar.value.offset] / 2
+  const offset = e[bar.value.client] - (e.target as HTMLElement).getBoundingClientRect()[bar.value.direction]- barHalf
+  const offsetRatio = offset / (scrollbar.wrapElement[bar.value.offset] - barRef.value![bar.value.offset])
+  scrollbar.wrapElement[bar.value.scroll] = 
+    offsetRatio * (scrollbar.wrapElement[bar.value.scrollSize] - scrollbar.wrapElement[bar.value.offset])
+}
+const mouseMoveHandler = (e: MouseEvent) => {
+  const offset = initialScroll.value + (e[bar.value.client] - initialPosition.value)
+  const offsetRatio = offset / (scrollbar.wrapElement[bar.value.offset] - barRef.value![bar.value.offset])
+  scrollbar.wrapElement[bar.value.scroll] = 
+    offsetRatio * (scrollbar.wrapElement[bar.value.scrollSize] - scrollbar.wrapElement[bar.value.offset])
+}
+const mouseUpHandler = () => {
+  document.removeEventListener('mousemove', mouseMoveHandler)
+  document.removeEventListener('mouseup', mouseUpHandler)
+}
+
+const barHorizontalStyle = computed(()=>{
+  return {
+    width: props.width,
+    transform: `translateX(${props.scrollX}%)`
+  }
+})
+const barVerticalStyle = computed(()=>{
   return {
     height: props.height,
     transform: `translateY(${props.scrollY}%)`
   }
-})
-const initialPosition = ref(0)
-const move = ref(0)
-const handleScroll = (e: MouseEvent)=> {
-  initialPosition.value = e.clientY
-  console.log('e--',e)
-  console.log('b--',barRef.value?.getBoundingClientRect())
-  // console.log('a--',parentRef.value?.getBoundingClientRect())
-  // console.log('b--',barRef.value?.getBoundingClientRect())
-  document.addEventListener('mousemove', mouseMoveHandler)
-  document.addEventListener('mouseup', mouseUpHandler)
-}
-const mouseMoveHandler = (e: MouseEvent) => {
-  console.log('mouseMoveHandler--',e)
-  // const move = barRef.value?.getBoundingClientRect().y
-  // move.value = initialPosition.value - endPosition
-  // initialPosition.value = move.value
-  // emits('scroll', endPosition)
-  // const endPosition = e.clientY
-  // move.value = initialPosition.value - endPosition
-  // emits('scroll', move.value)
-}
-const mouseUpHandler = (e: MouseEvent) => {
-  const endPosition = e.clientY
-  move.value = initialPosition.value - endPosition
-  emits('scroll', move.value)
-  document.removeEventListener('mousemove', mouseMoveHandler)
-  document.removeEventListener('mouseup', mouseUpHandler)
-  // console.log('mouseup--',endPosition)
-  // console.log('移动了---',move.value)
-}
-defineExpose({
-  handleScroll,
 })
 </script>
