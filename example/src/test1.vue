@@ -1,6 +1,6 @@
 
 <template>
-  <z-scrollbar height="200px">
+  <z-scrollbar always height="400px">
     <div v-if="show">
       button组件<br />
       <z-button plain>按钮</z-button>

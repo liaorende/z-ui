@@ -17,12 +17,14 @@
       </div>
     </div>
     <bar
+      always
       horizontal
       ref="barRef"
       :width="barWidth+'px'"
       :scrollX="barScrollX"
     />
     <bar
+      always
       vertical
       ref="barRef"
       :height="barHeight+'px'"

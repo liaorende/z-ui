@@ -1,7 +1,7 @@
 <template>
   <Transition name="bar-fade">
     <div
-      v-show="scrollbar.isShow"
+      v-show="always || scrollbar.isShow"
       ref="parentRef"
       :class="[
         ns.e('bar'),

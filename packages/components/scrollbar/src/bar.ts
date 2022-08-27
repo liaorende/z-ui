@@ -22,6 +22,9 @@ export const barProps = {
   },
   scrollY: {
     type: Number
+  },
+  always: {
+    type: Boolean
   }
 }
 
