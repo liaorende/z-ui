@@ -1,6 +1,6 @@
 
 <template>
-  <z-scrollbar always height="400px">
+  <z-scrollbar @scroll="onScroll" height="200px">
     <div v-if="show">
       button组件<br />
       <z-button plain>按钮</z-button>
@@ -116,4 +116,8 @@ const dialogVisible2 = ref(false)
 
 const show = ref(true)
 
+const onScroll = (sL:number,sT: number) => {
+  console.log('sL--',sL)
+  console.log('sT--',sT)
+}
 </script>

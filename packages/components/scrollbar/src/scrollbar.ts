@@ -6,3 +6,10 @@ export const scrollbarProps = {
     type: Boolean
   }
 }
+
+export const scrollbarEmits = {
+  scroll: ({ scrollLeft, scrollTop }:{
+    scrollLeft: number,
+    scrollTop: number
+  }) => typeof scrollLeft === 'number' && typeof scrollTop === 'number'
+}

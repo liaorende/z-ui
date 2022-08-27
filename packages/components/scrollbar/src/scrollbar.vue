@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
 import { onMounted, onUpdated, provide, reactive, ref } from "vue";
-import { scrollbarProps } from "./scrollbar";
+import { scrollbarProps, scrollbarEmits } from "./scrollbar";
 import Bar from "./bar.vue";
 
 defineOptions({
@@ -43,6 +43,7 @@ defineOptions({
 })
 const ns = useNamespace('scrollbar')
 const props = defineProps(scrollbarProps)
+const emits = defineEmits(scrollbarEmits)
 const viewRef = ref<HTMLDivElement>()
 const wrapRef = ref<HTMLDivElement>()
 const barRef = ref<HTMLDivElement>()
@@ -58,6 +59,10 @@ const handleScroll = (event: any) => {
   const _moveY = event.target.scrollTop / event.target.offsetHeight * 100
   barScrollX.value = _moveX
   barScrollY.value = _moveY
+  emits('scroll', {
+    scrollLeft: event.target.scrollLeft,
+    scrollTop: event.target.scrollTop
+  })
 }
 
 const update = () => {
