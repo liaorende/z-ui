@@ -1,85 +1,89 @@
 
 <template>
-  <z-scrollbar>
-    <div v-if="show">
-      button组件<br />
-      <z-button plain>按钮</z-button>
-      <z-button plain disabled>按钮测试</z-button>
-      <br />
-      <z-button>test</z-button>
-      <z-button disabled>test 123</z-button><br />
-      <z-button size="small" icon="Search">搜索</z-button>
-      <z-button size="small">
-        搜索<z-icon class="z-icon--right"><Search /></z-icon>
-      </z-button><br />
-      <z-button plain icon="Search">按钮</z-button>
-      <z-button plain>
-        搜索<z-icon class="z-icon--right"><Search /></z-icon>
-      </z-button>
-      <br />
-      input组件
-      <br />
-      <z-input @input="onInput" @change="onChange"
-        class="custom-input"
-        style="width: 190px"
-        maxlength="30"
-      /><br />
-      <z-input v-model="value" @input="onInput" @change="onChange"
-        class="custom-input"
-        prefixIcon="Search"
-        style="width: 190px"
-        showWordLimit
-        maxlength="30"
-      />
-      <br />
-      <z-input v-model="value" @input="onInput" @change="onChange"
-        class="custom-input"
-        suffixIcon="Search"
-        style="width: 190px"
-        showWordLimit
-        maxlength="20"
-      />
-      <br />
-      <z-checkbox v-model="checked" label="test" @change="test">
-        aaaa
-      </z-checkbox>
-      <z-checkbox v-model="checkAll" :indeterminate="isIndeterminate"
-        @change="handleCheckAllChange"
-      >
-        选中全部
-      </z-checkbox>
-      <br />
-      <z-checkbox-group v-model="checkedList" @change="handleCheckedChange">
-        <z-checkbox label="选项1" />
-        <z-checkbox label="选项2" />
-      </z-checkbox-group>
-      <br />
-      <z-radio-group v-model="radio">
-        <z-radio label="单选1">Option 1</z-radio>
-        <z-radio label="单选2">Option 2</z-radio>
-      </z-radio-group>
-      radio: {{radio}}
-      <br />
-      <z-button @click="dialogVisible = true">
-        打开弹窗
-      </z-button>
-      <z-dialog title="test title" v-model="dialogVisible">
-        <span>弹窗1111</span>
-        <template #footer>
-          <z-button plain>关闭</z-button>
-          <z-button @click="dialogVisible2 = true">确认</z-button>
-        </template>
-      </z-dialog>
-      <z-dialog title="test title" v-model="dialogVisible2">
-        <span>弹窗2222</span>
-        <template #footer>
-          <z-button plain>关闭</z-button>
-          <z-button @click="dialogVisible2 = true">确认</z-button>
-        </template>
-      </z-dialog>
-      <z-select/>
-    </div>
-  </z-scrollbar>
+  <div>
+    button组件<br />
+    <z-button plain>按钮</z-button>
+    <z-button plain disabled>按钮测试</z-button>
+    <br />
+    <z-button>test</z-button>
+    <z-button disabled>test 123</z-button><br />
+    <z-button size="small" icon="Search">搜索</z-button>
+    <z-button size="small">
+      搜索<z-icon class="z-icon--right"><Search /></z-icon>
+    </z-button><br />
+    <z-button plain icon="Search">按钮</z-button>
+    <z-button plain>
+      搜索<z-icon class="z-icon--right"><Search /></z-icon>
+    </z-button>
+    <br />
+    input组件
+    <br />
+    <z-input @input="onInput" @change="onChange"
+      class="custom-input"
+      style="width: 190px"
+      maxlength="30"
+    /><br />
+    <z-input v-model="value" @input="onInput" @change="onChange"
+      class="custom-input"
+      prefixIcon="Search"
+      style="width: 190px"
+      showWordLimit
+      maxlength="30"
+    />
+    <br />
+    <z-input v-model="value" @input="onInput" @change="onChange"
+      class="custom-input"
+      suffixIcon="Search"
+      style="width: 190px"
+      showWordLimit
+      maxlength="20"
+    />
+    <br />
+    <z-checkbox v-model="checked" label="test" @change="test">
+      aaaa
+    </z-checkbox>
+    <z-checkbox v-model="checkAll" :indeterminate="isIndeterminate"
+      @change="handleCheckAllChange"
+    >
+      选中全部
+    </z-checkbox>
+    <br />
+    <z-checkbox-group v-model="checkedList" @change="handleCheckedChange">
+      <z-checkbox label="选项1" />
+      <z-checkbox label="选项2" />
+    </z-checkbox-group>
+    <br />
+    <z-radio-group v-model="radio">
+      <z-radio label="单选1">Option 1</z-radio>
+      <z-radio label="单选2">Option 2</z-radio>
+    </z-radio-group>
+    radio: {{radio}}
+    <br />
+    <z-button @click="dialogVisible = true">
+      打开弹窗
+    </z-button>
+    <z-dialog title="test title" v-model="dialogVisible">
+      <span>弹窗1111</span>
+      <template #footer>
+        <z-button plain>关闭</z-button>
+        <z-button @click="dialogVisible2 = true">确认</z-button>
+      </template>
+    </z-dialog>
+    <z-dialog title="test title" v-model="dialogVisible2">
+      <span>弹窗2222</span>
+      <template #footer>
+        <z-button plain>关闭</z-button>
+        <z-button @click="dialogVisible2 = true">确认</z-button>
+      </template>
+    </z-dialog>
+    <z-select />
+    <z-popover>
+      <template #reference>
+        <z-button @click="test1">popover</z-button>
+      </template>
+      <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
+    </z-popover>
+  </div>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -97,6 +101,9 @@ const checkAll = ref(false)
 const isIndeterminate = ref(true)
 const test = (value: boolean)=>{
   console.log('value--->',value)
+}
+const test1 = (e: Event)=>{
+  console.log('e--',e.target.getBoundingClientRect())
 } 
 const handleCheckAllChange = (val: boolean) => {
   checkedList.value = val ? list : []
