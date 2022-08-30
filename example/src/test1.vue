@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <z-scrollbar height="200px">
     button组件<br />
     <z-button plain>按钮</z-button>
     <z-button plain disabled>按钮测试</z-button>
@@ -79,11 +79,11 @@
     <z-select />
     <z-popover>
       <template #reference>
-        <z-button @click="test1">popover</z-button>
+        <z-button>popover</z-button>
       </template>
       <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
     </z-popover>
-  </div>
+  </z-scrollbar>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -102,9 +102,7 @@ const isIndeterminate = ref(true)
 const test = (value: boolean)=>{
   console.log('value--->',value)
 }
-const test1 = (e: Event)=>{
-  console.log('e--',e.target.getBoundingClientRect())
-} 
+
 const handleCheckAllChange = (val: boolean) => {
   checkedList.value = val ? list : []
   isIndeterminate.value = false

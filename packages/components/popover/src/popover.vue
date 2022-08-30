@@ -1,8 +1,10 @@
 <template>
-  <slot name="reference" />
+  <empty-child :class="ns.e('trigger')" @click="test">
+    <slot name="reference" />
+  </empty-child>
   <Teleport to="body">
     <div
-      ref="triggerElement"
+      v-show="visible"
       :class="[ns.b()]"
       :style="popoverStyle"
     >
@@ -12,21 +14,33 @@
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils';
-import { computed, onMounted, ref, useSlots } from 'vue';
+import { computed, onBeforeUpdate, onMounted, onUpdated, provide, reactive, ref, useSlots, watch } from 'vue';
 import { popoverProps } from "./popover";
+import { EmptyChild } from "./empty-child";
 defineOptions({
   name: 'z-popover'
 })
 const ns = useNamespace('popover')
 const props = defineProps(popoverProps)
-const triggerElement = ref<HTMLElement>()
-const $slots = useSlots()
+const triggerElement = ref()
+const clientRect = reactive({left: 0, top: 0})
 const popoverStyle = computed(()=>{
-  return ``
+  return {
+    left: clientRect.left+'px',
+    top: clientRect.top+'px'
+  }
 })
-onMounted(()=>{
-  setTimeout(() => {
-    console.log('triggerElement--',triggerElement)
-  }, 1000);
+const visible = ref(false)
+const test = (e: Event) => {
+  visible.value = !visible.value
+}
+onBeforeUpdate(()=>{
+  const { x,y,width,height } = triggerElement.value.getBoundingClientRect()
+  clientRect.left = x + width 
+  clientRect.top = y + height
+})
+
+provide('Popover',{
+  triggerElement
 })
 </script>
