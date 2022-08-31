@@ -1,6 +1,6 @@
 
 <template>
-  <z-scrollbar height="200px">
+  <z-scrollbar>
     button组件<br />
     <z-button plain>按钮</z-button>
     <z-button plain disabled>按钮测试</z-button>
@@ -39,6 +39,12 @@
       maxlength="20"
     />
     <br />
+    <z-popover>
+      <template #reference>
+        <z-button>popover</z-button>
+      </template>
+      <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
+    </z-popover>
     <z-checkbox v-model="checked" label="test" @change="test">
       aaaa
     </z-checkbox>
@@ -77,12 +83,7 @@
       </template>
     </z-dialog>
     <z-select />
-    <z-popover>
-      <template #reference>
-        <z-button>popover</z-button>
-      </template>
-      <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
-    </z-popover>
+    
   </z-scrollbar>
 </template>
 <script setup lang="ts">
