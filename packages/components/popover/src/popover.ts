@@ -12,4 +12,13 @@ export const placementType = [
   'rightTop',
   'rightBottom'
 ]
-export const popoverProps = {}
+export const TriggerType = ['hover', 'active']
+export const popoverProps = {
+  trigger: {
+    type: String,
+    default: 'hover',
+    validator(value: string) {
+      return TriggerType.includes(value)
+    }
+  }
+}
