@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ZUi from "@z-ui/components";
+import ZUi from '@z-ui/components'
 import '@z-ui/theme'
 
 // import ZUi from "vue3-yytest";

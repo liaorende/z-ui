@@ -1,4 +1,3 @@
-
 <template>
   <z-scrollbar>
     <div class="scrollbar-flex-content">
@@ -8,10 +7,7 @@
     </div>
   </z-scrollbar>
 </template>
-<script setup lang="ts">
-
-
-</script>
+<script setup lang="ts"></script>
 
 <style>
 .scrollbar-flex-content {

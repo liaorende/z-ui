@@ -1,14 +1,12 @@
 <template>
-  <div 
-    :class="[
-      ns.b()
-    ]"
+  <div
+    :class="[ns.b()]"
     @mousemove="isShow = true"
     @mouseleave="isShow = false"
   >
     <div
       ref="wrapRef"
-      :class="[ ns.e('wrap') ]"
+      :class="[ns.e('wrap')]"
       :style="{ maxHeight: height }"
       @scroll="handleScroll"
     >
@@ -20,23 +18,23 @@
       always
       horizontal
       ref="barRef"
-      :width="barWidth+'px'"
+      :width="barWidth + 'px'"
       :scrollX="barScrollX"
     />
     <bar
       always
       vertical
       ref="barRef"
-      :height="barHeight+'px'"
+      :height="barHeight + 'px'"
       :scrollY="barScrollY"
     />
   </div>
 </template>
 <script setup lang="ts">
-import { useNamespace } from '@z-ui/utils';
-import { onMounted, onUpdated, provide, reactive, ref } from "vue";
-import { scrollbarProps, scrollbarEmits } from "./scrollbar";
-import Bar from "./bar.vue";
+import { useNamespace } from '@z-ui/utils'
+import { onMounted, onUpdated, provide, reactive, ref } from 'vue'
+import { scrollbarProps, scrollbarEmits } from './scrollbar'
+import Bar from './bar.vue'
 
 defineOptions({
   name: 'z-scrollbar'
@@ -55,8 +53,8 @@ const barScrollX = ref(0)
 const barScrollY = ref(0)
 
 const handleScroll = (event: any) => {
-  const _moveX = event.target.scrollLeft / event.target.offsetWidth * 100
-  const _moveY = event.target.scrollTop / event.target.offsetHeight * 100
+  const _moveX = (event.target.scrollLeft / event.target.offsetWidth) * 100
+  const _moveY = (event.target.scrollTop / event.target.offsetHeight) * 100
   barScrollX.value = _moveX
   barScrollY.value = _moveY
   emits('scroll', {

@@ -3,7 +3,7 @@ const _bem = (
   namespace: string,
   block: string,
   blockSuffix: string,
-  element: string,
+  element: string
 ) => {
   let cls = `${namespace}-${block}`
   if (blockSuffix) {
@@ -15,11 +15,10 @@ const _bem = (
   return cls
 }
 
-export const useNamespace = (block: string) =>{
-  const b = (blockSuffix = '') =>
-    _bem(Namespace, block, blockSuffix,'')
+export const useNamespace = (block: string) => {
+  const b = (blockSuffix = '') => _bem(Namespace, block, blockSuffix, '')
   const m = (state: string | undefined) => {
-    return state ? _bem(Namespace, block, state,'') : ''
+    return state ? _bem(Namespace, block, state, '') : ''
   }
   const is = (attribute: string, state: Boolean) => {
     return state ? `is-${attribute}` : ''
@@ -28,6 +27,9 @@ export const useNamespace = (block: string) =>{
     return element ? _bem(Namespace, block, '', element) : ''
   }
   return {
-    b, m, is, e
+    b,
+    m,
+    is,
+    e
   }
 }

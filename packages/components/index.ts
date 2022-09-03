@@ -13,12 +13,22 @@ import type { App } from 'vue'
 
 // 组件列表
 const components = [
-  Button,Input,Icon,Checkbox,CheckboxGroup,Radio,RadioGroup,
-  Dialog,Overlay,Select,Scrollbar,Popover
-] 
+  Button,
+  Input,
+  Icon,
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Dialog,
+  Overlay,
+  Select,
+  Scrollbar,
+  Popover
+]
 // 使用所有组件
-const install = (app: App)=> {
-  components.forEach(component => {
+const install = (app: App) => {
+  components.forEach((component) => {
     app.component(component.name, component)
   })
 }
@@ -37,4 +47,4 @@ export {
   Popover as ZPopover,
   install
 }
-export default install 
+export default install

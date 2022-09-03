@@ -1,10 +1,6 @@
 <template>
-  <div 
-    :class="[
-      ns.b(),
-      $attrs.class,
-      ns.is('focused',focused)
-    ]"
+  <div
+    :class="[ns.b(), $attrs.class, ns.is('focused', focused)]"
     :style="containerStyle"
   >
     <div :class="ns.e('wrapper')">
@@ -30,18 +26,21 @@
         <z-icon v-if="props.suffixIcon">
           <component :is="props.suffixIcon" />
         </z-icon>
-        <span v-if="$attrs.maxlength && props.showWordLimit" :class="ns.e('count')">
-          {{inputValue.length}} / {{$attrs.maxlength}}
+        <span
+          v-if="$attrs.maxlength && props.showWordLimit"
+          :class="ns.e('count')"
+        >
+          {{ inputValue.length }} / {{ $attrs.maxlength }}
         </span>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { useNamespace, filterAttrs } from '@z-ui/utils';
-import { computed, ref, StyleValue, useAttrs, useSlots } from 'vue';
+import { useNamespace, filterAttrs } from '@z-ui/utils'
+import { computed, ref, StyleValue, useAttrs, useSlots } from 'vue'
 
-import { inputProps, inputEmits } from "./input";
+import { inputProps, inputEmits } from './input'
 defineOptions({
   name: 'z-input',
   inheritAttrs: false
@@ -52,9 +51,11 @@ const ns = useNamespace('input')
 const slots = useSlots()
 const containerAttrs = useAttrs()
 const inputAttrs = filterAttrs(containerAttrs)
-const containerStyle = computed<StyleValue>(() => containerAttrs.style as StyleValue)
-const suffixVisible = computed(() =>
-  !!slots.suffix || !!props.suffixIcon || !!props.showWordLimit
+const containerStyle = computed<StyleValue>(
+  () => containerAttrs.style as StyleValue
+)
+const suffixVisible = computed(
+  () => !!slots.suffix || !!props.suffixIcon || !!props.showWordLimit
 )
 
 const focused = ref(false)
@@ -63,8 +64,8 @@ const inputValue = ref(props.modelValue)
 const handleInput = (event: Event) => {
   let { value } = event.target as HTMLInputElement
   inputValue.value = value
-  emit('input',value)
-  emit('update:modelValue',value)
+  emit('input', value)
+  emit('update:modelValue', value)
 }
 const handleChange = (event: Event) => {
   let { value } = event.target as HTMLInputElement

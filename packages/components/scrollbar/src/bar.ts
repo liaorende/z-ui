@@ -1,6 +1,6 @@
 export interface scrollbarInject {
-  wrapElement: HTMLDivElement,
-  viewElement: HTMLDivElement,
+  wrapElement: HTMLDivElement
+  viewElement: HTMLDivElement
   isShow: boolean
 }
 
@@ -34,13 +34,13 @@ export const BAR_MAP = {
     scroll: 'scrollTop',
     client: 'clientY',
     scrollSize: 'scrollHeight',
-    direction: 'top',
+    direction: 'top'
   },
   horizontal: {
     offset: 'offsetWidth',
     scroll: 'scrollLeft',
     client: 'clientX',
     scrollSize: 'scrollWidth',
-    direction: 'left',
-  },
+    direction: 'left'
+  }
 } as const

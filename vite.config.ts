@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import defineOptions from "unplugin-vue-define-options/vite";
+import defineOptions from 'unplugin-vue-define-options/vite'
 import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
@@ -15,7 +15,7 @@ export default defineConfig({
     minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue','@element-plus/icons-vue'],
+      external: ['vue', '@element-plus/icons-vue'],
       input: ['packages/components/index.ts'],
       output: [
         {
@@ -26,7 +26,7 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           preserveModulesRoot: 'packages/',
-          exports: 'named',
+          exports: 'named'
         },
         {
           format: 'cjs',
@@ -36,17 +36,13 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           preserveModulesRoot: 'packages/',
-          exports: 'named',
+          exports: 'named'
           // globals: {
           //   vue: 'Vue'
           // }
         }
       ]
-    },
+    }
   },
-  plugins: [
-    vue(), 
-    defineOptions(), 
-    dts({ outputDir: ['dist/es','dist/lib'] })
-  ]
+  plugins: [vue(), defineOptions(), dts({ outputDir: ['dist/es', 'dist/lib'] })]
 })

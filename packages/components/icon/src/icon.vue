@@ -5,8 +5,7 @@
 </template>
 
 <script setup lang="ts">
-
-import { useNamespace } from "@z-ui/utils";
+import { useNamespace } from '@z-ui/utils'
 defineOptions({
   name: 'z-icon'
 })

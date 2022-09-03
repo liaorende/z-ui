@@ -1,23 +1,22 @@
 <template>
-  <Transition
-    name="dialog-fade"
-  >
-    <z-overlay 
-      v-show="modelValue" 
-      @click="emit('update:modelValue',false)"
+  <Transition name="dialog-fade">
+    <z-overlay
+      v-show="modelValue"
+      @click="emit('update:modelValue', false)"
       :z-index="zIndex"
     >
       <div
-        :class="[
-          ns.b()
-        ]"
-        :style="{'width':width}"
+        :class="[ns.b()]"
+        :style="{ width: width }"
         v-if="isRendered"
         @click.stop
       >
         <header :class="ns.e('header')">
-          <span>{{title}}</span>
-          <z-icon :class="ns.e('headerbtn')" @click="emit('update:modelValue',false)">
+          <span>{{ title }}</span>
+          <z-icon
+            :class="ns.e('headerbtn')"
+            @click="emit('update:modelValue', false)"
+          >
             <Close />
           </z-icon>
         </header>
@@ -32,11 +31,10 @@
   </Transition>
 </template>
 <script setup lang="ts">
-;
-import ZOverlay from "@z-ui/components/overlay";
-import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils';
-import { computed, ref, watch } from 'vue';
-import { dialogProps, dialogEmits } from "./dialog";
+import ZOverlay from '@z-ui/components/overlay'
+import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils'
+import { computed, ref, watch } from 'vue'
+import { dialogProps, dialogEmits } from './dialog'
 
 defineOptions({
   name: 'z-dialog'
@@ -49,25 +47,28 @@ const { nextZIndex } = useZIndex()
 const zIndex = ref(nextZIndex())
 const isRendered = ref(false)
 const hasOtherOverlay = ref(false)
-watch(() => props.modelValue, (value)=>{
-  useLockScreen(value)
-  if(props.modelValue){
-    zIndex.value = nextZIndex()
-    isRendered.value = true
+watch(
+  () => props.modelValue,
+  (value) => {
+    useLockScreen(value)
+    if (props.modelValue) {
+      zIndex.value = nextZIndex()
+      isRendered.value = true
+    }
   }
-})
+)
 
 const useLockScreen = (trigger: boolean) => {
   const _bodyClass = document.body.classList
   const _className = 'z-lock-parent'
-  if(trigger){
-    if(_bodyClass.contains(_className)) {
+  if (trigger) {
+    if (_bodyClass.contains(_className)) {
       hasOtherOverlay.value = true
       return
     }
     _bodyClass.add(_className)
-  }else{
-    if(hasOtherOverlay.value) return
+  } else {
+    if (hasOtherOverlay.value) return
     _bodyClass.remove(_className)
   }
 }

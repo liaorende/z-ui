@@ -10,10 +10,10 @@ export const inputProps = {
     default: '请输入内容'
   },
   prefixIcon: {
-    type: String,
+    type: String
   },
   suffixIcon: {
-    type: String,
+    type: String
   },
   inputStyle: {
     type: Object
@@ -32,7 +32,7 @@ export const inputEmits = {
   input: (value: String) => typeof value === 'string',
   change: (value: String) => typeof value === 'string',
   blur: (evt: FocusEvent) => evt instanceof FocusEvent,
-  focus: (evt: FocusEvent) => evt instanceof FocusEvent,
+  focus: (evt: FocusEvent) => evt instanceof FocusEvent
 }
 
 export type InputProps = ExtractPropTypes<typeof inputProps>

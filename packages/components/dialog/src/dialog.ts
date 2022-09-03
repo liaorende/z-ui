@@ -6,7 +6,7 @@ export const dialogProps = {
     default: false
   },
   title: {
-    type: String,
+    type: String
   },
   width: {
     type: String

@@ -1,4 +1,3 @@
-
 <template>
   <div>
     button组件<br />
@@ -9,8 +8,8 @@
     <z-button disabled>test 123</z-button><br />
     <z-button size="small" icon="Search">搜索</z-button>
     <z-button size="small">
-      搜索<z-icon class="z-icon--right"><Search /></z-icon>
-    </z-button><br />
+      搜索<z-icon class="z-icon--right"><Search /></z-icon> </z-button
+    ><br />
     <z-button plain icon="Search">按钮</z-button>
     <z-button plain>
       搜索<z-icon class="z-icon--right"><Search /></z-icon>
@@ -18,12 +17,17 @@
     <br />
     input组件
     <br />
-    <z-input @input="onInput" @change="onChange"
+    <z-input
+      @input="onInput"
+      @change="onChange"
       class="custom-input"
       style="width: 190px"
       maxlength="30"
     /><br />
-    <z-input v-model="value" @input="onInput" @change="onChange"
+    <z-input
+      v-model="value"
+      @input="onInput"
+      @change="onChange"
       class="custom-input"
       prefixIcon="Search"
       style="width: 190px"
@@ -31,7 +35,10 @@
       maxlength="30"
     />
     <br />
-    <z-input v-model="value" @input="onInput" @change="onChange"
+    <z-input
+      v-model="value"
+      @input="onInput"
+      @change="onChange"
       class="custom-input"
       suffixIcon="Search"
       style="width: 190px"
@@ -42,7 +49,9 @@
     <z-checkbox v-model="checked" label="test" @change="test">
       aaaa
     </z-checkbox>
-    <z-checkbox v-model="checkAll" :indeterminate="isIndeterminate"
+    <z-checkbox
+      v-model="checkAll"
+      :indeterminate="isIndeterminate"
       @change="handleCheckAllChange"
     >
       选中全部
@@ -57,11 +66,9 @@
       <z-radio label="单选1">Option 1</z-radio>
       <z-radio label="单选2">Option 2</z-radio>
     </z-radio-group>
-    radio: {{radio}}
+    radio: {{ radio }}
     <br />
-    <z-button @click="dialogVisible = true">
-      打开弹窗
-    </z-button>
+    <z-button @click="dialogVisible = true"> 打开弹窗 </z-button>
     <z-dialog title="test title" v-model="dialogVisible">
       <span>弹窗1111</span>
       <template #footer>
@@ -81,46 +88,45 @@
       <template #reference>
         <z-button @click="test1">popover</z-button>
       </template>
-      <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
+      <div style="width: 80px; height: 80px; background: red">测试 popover</div>
     </z-popover>
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const value = ref('123')
 const onInput = (data: string) => {
-  console.log('value--',data)
+  console.log('value--', data)
 }
 const onChange = (data: string) => {
-  console.log('onChange--',data)
+  console.log('onChange--', data)
 }
 
 const checked = ref(false)
 const checkAll = ref(false)
 const isIndeterminate = ref(true)
-const test = (value: boolean)=>{
-  console.log('value--->',value)
+const test = (value: boolean) => {
+  console.log('value--->', value)
 }
-const test1 = (e: Event)=>{
-  console.log('e--',e.target.getBoundingClientRect())
-} 
+const test1 = (e: Event) => {
+  console.log('e--', e.target.getBoundingClientRect())
+}
 const handleCheckAllChange = (val: boolean) => {
   checkedList.value = val ? list : []
   isIndeterminate.value = false
 }
 const handleCheckedChange = (value: string[]) => {
-  console.log('handleCheckedChange--',value)
+  console.log('handleCheckedChange--', value)
   const checkedCount = value.length
   checkAll.value = checkedCount === list.length
   isIndeterminate.value = checkedCount > 0 && checkedCount < list.length
 }
-const list = ['选项1','选项2']
+const list = ['选项1', '选项2']
 const checkedList = ref(['选项1'])
 const radio = ref('单选1')
 const dialogVisible = ref(false)
 const dialogVisible2 = ref(false)
 
 const show = ref(true)
-
 </script>
