@@ -10,7 +10,7 @@ export default defineConfig({
     // cssCodeSplit: true,
     lib: {
       entry: 'packages/components/index.ts',
-      name: 'z-ui'
+      name: 'z-ui',
     },
     minify: false,
     rollupOptions: {
@@ -26,7 +26,7 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           preserveModulesRoot: 'packages/',
-          exports: 'named'
+          exports: 'named',
         },
         {
           format: 'cjs',
@@ -36,13 +36,17 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           preserveModulesRoot: 'packages/',
-          exports: 'named'
+          exports: 'named',
           // globals: {
           //   vue: 'Vue'
           // }
-        }
-      ]
-    }
+        },
+      ],
+    },
   },
-  plugins: [vue(), defineOptions(), dts({ outputDir: ['dist/es', 'dist/lib'] })]
+  plugins: [
+    vue(),
+    defineOptions(),
+    dts({ outputDir: ['dist/es', 'dist/lib'] }),
+  ],
 })

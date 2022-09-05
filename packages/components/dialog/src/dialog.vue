@@ -2,13 +2,13 @@
   <Transition name="dialog-fade">
     <z-overlay
       v-show="modelValue"
-      @click="emit('update:modelValue', false)"
       :z-index="zIndex"
+      @click="emit('update:modelValue', false)"
     >
       <div
+        v-if="isRendered"
         :class="[ns.b()]"
         :style="{ width: width }"
-        v-if="isRendered"
         @click.stop
       >
         <header :class="ns.e('header')">
@@ -23,7 +23,7 @@
         <div :class="ns.e('body')">
           <slot />
         </div>
-        <footer :class="ns.e('footer')" v-if="$slots.footer">
+        <footer v-if="$slots.footer" :class="ns.e('footer')">
           <slot name="footer" />
         </footer>
       </div>
@@ -37,7 +37,7 @@ import { computed, ref, watch } from 'vue'
 import { dialogProps, dialogEmits } from './dialog'
 
 defineOptions({
-  name: 'z-dialog'
+  name: 'z-dialog',
 })
 const ns = useNamespace('dialog')
 const props = defineProps(dialogProps)

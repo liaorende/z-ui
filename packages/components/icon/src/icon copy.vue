@@ -21,6 +21,6 @@
 
 <script setup lang="ts">
 defineOptions({
-  name: 'z-icon'
+  name: 'z-icon',
 })
 </script>

@@ -10,7 +10,7 @@ import { ref } from 'vue'
 import { selectProps } from './select'
 
 defineOptions({
-  name: 'z-select'
+  name: 'z-select',
 })
 const ns = useNamespace('select')
 const props = defineProps(selectProps)

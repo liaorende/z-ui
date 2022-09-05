@@ -10,8 +10,8 @@
     <z-button size="small">
       搜索<z-icon class="z-icon--right">
         <Search />
-      </z-icon>
-    </z-button><br />
+      </z-icon> </z-button
+    ><br />
     <z-button plain icon="Search">按钮</z-button>
     <z-button plain>
       搜索<z-icon class="z-icon--right">
@@ -21,23 +21,49 @@
     <br />
     input组件
     <br />
-    <z-input @input="onInput" @change="onChange" class="custom-input" style="width: 190px" maxlength="30" /><br />
-    <z-input v-model="value" @input="onInput" @change="onChange" class="custom-input" prefixIcon="Search"
-      style="width: 190px" showWordLimit maxlength="30" />
+    <z-input
+      @input="onInput"
+      @change="onChange"
+      class="custom-input"
+      style="width: 190px"
+      maxlength="30"
+    /><br />
+    <z-input
+      v-model="value"
+      @input="onInput"
+      @change="onChange"
+      class="custom-input"
+      prefixIcon="Search"
+      style="width: 190px"
+      showWordLimit
+      maxlength="30"
+    />
     <br />
-    <z-input v-model="value" @input="onInput" @change="onChange" class="custom-input" suffixIcon="Search"
-      style="width: 190px" showWordLimit maxlength="20" />
+    <z-input
+      v-model="value"
+      @input="onInput"
+      @change="onChange"
+      class="custom-input"
+      suffixIcon="Search"
+      style="width: 190px"
+      showWordLimit
+      maxlength="20"
+    />
     <br />
     <z-popover>
       <template #reference>
         <z-button>popover</z-button>
       </template>
-      <div style="width: 80px;height: 80px;background:red;">测试 popover</div>
+      <div style="width: 80px; height: 80px; background: red">测试 popover</div>
     </z-popover>
     <z-checkbox v-model="checked" label="test" @change="test">
       aaaa
     </z-checkbox>
-    <z-checkbox v-model="checkAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange">
+    <z-checkbox
+      v-model="checkAll"
+      :indeterminate="isIndeterminate"
+      @change="handleCheckAllChange"
+    >
       选中全部
     </z-checkbox>
     <br />
@@ -68,7 +94,6 @@
       </template>
     </z-dialog>
     <z-select />
-
   </z-scrollbar>
 </template>
 <script setup lang="ts">

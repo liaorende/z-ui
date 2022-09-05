@@ -8,7 +8,7 @@ import { useNamespace } from '@z-ui/utils'
 import { overlayProps } from './overlay'
 
 defineOptions({
-  name: 'z-overlay'
+  name: 'z-overlay',
 })
 const ns = useNamespace('overlay')
 defineProps(overlayProps)

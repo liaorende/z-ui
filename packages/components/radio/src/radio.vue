@@ -4,14 +4,14 @@
       ns.b(),
       $attrs.class,
       ns.is('checked', isChecked),
-      ns.is('disabled', isDisabled)
+      ns.is('disabled', isDisabled),
     ]"
   >
     <span
       :class="[
         ns.e('input'),
         ns.is('checked', isChecked),
-        ns.is('disabled', isDisabled)
+        ns.is('disabled', isDisabled),
       ]"
     >
       <input
@@ -35,7 +35,7 @@ import { computed, inject } from 'vue'
 import { radioProps, radioEmits } from './radio'
 defineOptions({
   name: 'z-radio',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 const props = defineProps(radioProps)
 const emit = defineEmits(radioEmits)
@@ -46,7 +46,7 @@ const modelValue = computed({
   get() {
     return radioGroup.modelValue.value
   },
-  set(val) {}
+  set(val) {},
 })
 const isChecked = computed(() => {
   return modelValue.value === props.label

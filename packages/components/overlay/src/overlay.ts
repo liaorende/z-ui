@@ -1,5 +1,5 @@
 export const overlayProps = {
   zIndex: {
-    type: Number
-  }
+    type: Number,
+  },
 }

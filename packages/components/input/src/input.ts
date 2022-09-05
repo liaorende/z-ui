@@ -3,28 +3,28 @@ import type { ExtractPropTypes } from 'vue'
 export const inputProps = {
   modelValue: {
     type: String,
-    default: ''
+    default: '',
   },
   placeholder: {
     type: String,
-    default: '请输入内容'
+    default: '请输入内容',
   },
   prefixIcon: {
-    type: String
+    type: String,
   },
   suffixIcon: {
-    type: String
+    type: String,
   },
   inputStyle: {
-    type: Object
+    type: Object,
   },
   showWordLimit: {
-    type: Boolean
+    type: Boolean,
   },
   readonly: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 }
 
 export const inputEmits = {
@@ -32,7 +32,7 @@ export const inputEmits = {
   input: (value: String) => typeof value === 'string',
   change: (value: String) => typeof value === 'string',
   blur: (evt: FocusEvent) => evt instanceof FocusEvent,
-  focus: (evt: FocusEvent) => evt instanceof FocusEvent
+  focus: (evt: FocusEvent) => evt instanceof FocusEvent,
 }
 
 export type InputProps = ExtractPropTypes<typeof inputProps>

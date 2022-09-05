@@ -24,7 +24,7 @@ const components = [
   Overlay,
   Select,
   Scrollbar,
-  Popover
+  Popover,
 ]
 // 使用所有组件
 const install = (app: App) => {
@@ -45,6 +45,6 @@ export {
   Select as ZSelect,
   Scrollbar as ZScrollbar,
   Popover as ZPopover,
-  install
+  install,
 }
 export default install

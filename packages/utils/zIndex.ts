@@ -10,6 +10,6 @@ export const useZIndex = () => {
   }
   return {
     currentZIndex,
-    nextZIndex
+    nextZIndex,
   }
 }

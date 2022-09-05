@@ -1,18 +1,18 @@
 export const scrollbarProps = {
   height: {
-    type: String
+    type: String,
   },
   always: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const scrollbarEmits = {
   scroll: ({
     scrollLeft,
-    scrollTop
+    scrollTop,
   }: {
     scrollLeft: number
     scrollTop: number
-  }) => typeof scrollLeft === 'number' && typeof scrollTop === 'number'
+  }) => typeof scrollLeft === 'number' && typeof scrollTop === 'number',
 }

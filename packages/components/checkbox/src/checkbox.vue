@@ -4,7 +4,7 @@
       ns.b(),
       $attrs.class,
       ns.is('checked', isChecked),
-      ns.is('disabled', isDisabled)
+      ns.is('disabled', isDisabled),
     ]"
     @click="onClickRoot"
   >
@@ -13,18 +13,18 @@
         ns.e('input'),
         ns.is('checked', isChecked),
         ns.is('disabled', isDisabled),
-        ns.is('indeterminate', props.indeterminate)
+        ns.is('indeterminate', props.indeterminate),
       ]"
     >
       <input
         v-model="modelValue"
         type="checkbox"
         :class="ns.e('original')"
-        @change="handleChange"
         :value="label"
         :disabled="isDisabled"
+        @change="handleChange"
       />
-      <span :class="ns.e('inner')"></span>
+      <span :class="ns.e('inner')" />
     </span>
     <span v-if="label || $slots.default" :class="ns.e('label')">
       <slot />
@@ -34,12 +34,12 @@
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils'
-import { computed, inject, useSlots } from 'vue'
+import { computed, inject } from 'vue'
 
 import { checkboxProps, checkboxEmits } from './checkbox'
 defineOptions({
   name: 'z-checkbox',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 const props = defineProps(checkboxProps)
 const emit = defineEmits(checkboxEmits)
@@ -60,12 +60,9 @@ const modelValue = computed({
       emit('update:modelValue', val)
       emit('change', val)
     }
-  }
+  },
 })
-const slots = useSlots()
-// const label = computed(()=>{
-//   return props.label ? props.label : slots
-// })
+
 const isChecked = computed(() => {
   const _value = modelValue.value
   if (typeof _value === 'boolean') {

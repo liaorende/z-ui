@@ -10,7 +10,7 @@ import { computed, provide } from 'vue'
 import { radioGroupProps, radioGroupEmits } from './radio'
 defineOptions({
   name: 'z-radio-group',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 const props = defineProps(radioGroupProps)
 const emit = defineEmits(radioGroupEmits)
@@ -25,6 +25,6 @@ const changeEvent = (val: String) => {
 provide('RadioGroup', {
   disabled: props.disabled,
   modelValue,
-  changeEvent
+  changeEvent,
 })
 </script>

@@ -1,5 +1,10 @@
 <template>
-  <empty-child :class="ns.e('trigger')" @click="onClick" @mouseenter="onMouseenter" @mouseleave="onMouseleave">
+  <empty-child
+    :class="ns.e('trigger')"
+    @click="onClick"
+    @mouseenter="onMouseenter"
+    @mouseleave="onMouseleave"
+  >
     <slot name="reference" />
   </empty-child>
   <Teleport to="body">
@@ -9,12 +14,22 @@
   </Teleport>
 </template>
 <script setup lang="ts">
-import { useNamespace } from '@z-ui/utils';
-import { computed, onBeforeUpdate, onMounted, onUpdated, provide, reactive, ref, useSlots, watch } from 'vue';
-import { popoverProps } from "./popover";
-import { EmptyChild } from "./empty-child";
+import { useNamespace } from '@z-ui/utils'
+import {
+  computed,
+  onBeforeUpdate,
+  onMounted,
+  onUpdated,
+  provide,
+  reactive,
+  ref,
+  useSlots,
+  watch,
+} from 'vue'
+import { popoverProps } from './popover'
+import { EmptyChild } from './empty-child'
 defineOptions({
-  name: 'z-popover'
+  name: 'z-popover',
 })
 const ns = useNamespace('popover')
 const props = defineProps(popoverProps)
@@ -23,7 +38,7 @@ const clientRect = reactive({ left: 0, top: 0 })
 const popoverStyle = computed(() => {
   return {
     left: clientRect.left + 'px',
-    top: clientRect.top + 'px'
+    top: clientRect.top + 'px',
   }
 })
 const getTriggerPositon = () => {
@@ -57,7 +72,6 @@ onBeforeUpdate(() => {
 })
 
 provide('Popover', {
-  triggerElement
+  triggerElement,
 })
-
 </script>

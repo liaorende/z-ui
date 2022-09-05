@@ -3,41 +3,41 @@ import type { ExtractPropTypes } from 'vue'
 export const checkboxGroupProps = {
   modelValue: {
     type: Array<number | string>,
-    default: () => []
+    default: () => [],
   },
   label: {
-    type: String
+    type: String,
   },
   disabled: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const checkboxProps = {
   modelValue: {
-    type: [Array<number | string>, Boolean]
+    type: [Array<number | string>, Boolean],
   },
   label: {
-    type: String
+    type: String,
   },
   disabled: {
-    type: Boolean
+    type: Boolean,
   },
   indeterminate: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const checkboxEmits = {
-  ['update:modelValue']: (value: Boolean) => typeof value === 'boolean',
+  ['update:modelValue']: (value: boolean) => typeof value === 'boolean',
   change: (value: boolean | Array<number | string>) =>
-    typeof value === 'boolean' || Array.isArray(value)
+    typeof value === 'boolean' || Array.isArray(value),
 }
 export const checkboxGroupEmits = {
   ['update:modelValue']: (value: Array<number | string>) =>
     Array.isArray(value),
   change: (value: boolean | Array<number | string>) =>
-    typeof value === 'boolean' || Array.isArray(value)
+    typeof value === 'boolean' || Array.isArray(value),
 }
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>

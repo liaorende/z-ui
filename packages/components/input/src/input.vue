@@ -43,7 +43,7 @@ import { computed, ref, StyleValue, useAttrs, useSlots } from 'vue'
 import { inputProps, inputEmits } from './input'
 defineOptions({
   name: 'z-input',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 const props = defineProps(inputProps)
 const emit = defineEmits(inputEmits)

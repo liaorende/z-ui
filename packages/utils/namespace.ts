@@ -30,6 +30,6 @@ export const useNamespace = (block: string) => {
     b,
     m,
     is,
-    e
+    e,
   }
 }

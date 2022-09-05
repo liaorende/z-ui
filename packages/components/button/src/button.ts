@@ -8,19 +8,19 @@ export const buttonProps = {
     type: String,
     validator(value: string) {
       return ButtonType.includes(value)
-    }
+    },
   },
   size: {
     type: String,
     validator(value: string) {
       return ButtonSize.includes(value)
-    }
+    },
   },
   disabled: Boolean,
   plain: Boolean,
   loading: Boolean,
   shadow: Boolean,
-  icon: String
+  icon: String,
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

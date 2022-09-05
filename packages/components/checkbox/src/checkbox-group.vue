@@ -9,7 +9,7 @@ import { computed, provide } from 'vue'
 import { checkboxGroupProps, checkboxGroupEmits } from './checkbox'
 defineOptions({
   name: 'z-checkbox-group',
-  inheritAttrs: false
+  inheritAttrs: false,
 })
 const ns = useNamespace('checkbox-group')
 const props = defineProps(checkboxGroupProps)
@@ -20,7 +20,7 @@ const modelValue = computed({
   },
   set(val: any) {
     // changeEvent(val)
-  }
+  },
 })
 const changeEvent = (val: Array<number | string>) => {
   emit('update:modelValue', val)
@@ -30,6 +30,6 @@ provide('CheckboxGroup', {
   name: 'z-checkbox-group',
   disabled: props.disabled,
   modelValue,
-  changeEvent
+  changeEvent,
 })
 </script>

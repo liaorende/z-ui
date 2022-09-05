@@ -6,7 +6,7 @@
       :class="[
         ns.e('bar'),
         ns.is('vertical', vertical),
-        ns.is('horizontal', horizontal)
+        ns.is('horizontal', horizontal),
       ]"
       @mousedown="clickBarHandler"
     >
@@ -89,13 +89,13 @@ const mouseUpHandler = () => {
 const barHorizontalStyle = computed(() => {
   return {
     width: props.width,
-    transform: `translateX(${props.scrollX}%)`
+    transform: `translateX(${props.scrollX}%)`,
   }
 })
 const barVerticalStyle = computed(() => {
   return {
     height: props.height,
-    transform: `translateY(${props.scrollY}%)`
+    transform: `translateY(${props.scrollY}%)`,
   }
 })
 </script>

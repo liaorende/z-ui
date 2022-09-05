@@ -37,7 +37,7 @@ import { scrollbarProps, scrollbarEmits } from './scrollbar'
 import Bar from './bar.vue'
 
 defineOptions({
-  name: 'z-scrollbar'
+  name: 'z-scrollbar',
 })
 const ns = useNamespace('scrollbar')
 const props = defineProps(scrollbarProps)
@@ -59,7 +59,7 @@ const handleScroll = (event: any) => {
   barScrollY.value = _moveY
   emits('scroll', {
     scrollLeft: event.target.scrollLeft,
-    scrollTop: event.target.scrollTop
+    scrollTop: event.target.scrollTop,
   })
 }
 
@@ -75,7 +75,7 @@ provide(
   reactive({
     wrapElement: wrapRef,
     viewElement: viewRef,
-    isShow
+    isShow,
   })
 )
 

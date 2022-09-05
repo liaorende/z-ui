@@ -1,6 +1,6 @@
 export const selectProps = {
   readonly: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 }

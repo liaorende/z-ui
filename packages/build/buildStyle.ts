@@ -16,7 +16,7 @@ const buildSass = async () => {
   for (const path in sassFils) {
     const filePath = `${themeDir}/${sassFils[path]}`
     const code = await sass.compileAsync(filePath, {
-      style: 'compressed'
+      style: 'compressed',
     })
     const cssPath = sassFils[path].replace('.scss', '.css')
     await fs.writeFile(resolve(targetDist, cssPath), code.css)

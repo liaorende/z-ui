@@ -2,30 +2,30 @@ import type { ExtractPropTypes } from 'vue'
 
 export const radioProps = {
   label: {
-    type: String
+    type: String,
   },
   disabled: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const radioGroupProps = {
   modelValue: {
-    type: String
+    type: String,
   },
   label: {
-    type: String
+    type: String,
   },
   disabled: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const radioEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string'
+  ['update:modelValue']: (value: String) => typeof value === 'string',
 }
 export const radioGroupEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string'
+  ['update:modelValue']: (value: String) => typeof value === 'string',
 }
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>

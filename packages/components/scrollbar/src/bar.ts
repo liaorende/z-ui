@@ -6,26 +6,26 @@ export interface scrollbarInject {
 
 export const barProps = {
   vertical: {
-    type: Boolean
+    type: Boolean,
   },
   horizontal: {
-    type: Boolean
+    type: Boolean,
   },
   width: {
-    type: String
+    type: String,
   },
   height: {
-    type: String
+    type: String,
   },
   scrollX: {
-    type: Number
+    type: Number,
   },
   scrollY: {
-    type: Number
+    type: Number,
   },
   always: {
-    type: Boolean
-  }
+    type: Boolean,
+  },
 }
 
 export const BAR_MAP = {
@@ -34,13 +34,13 @@ export const BAR_MAP = {
     scroll: 'scrollTop',
     client: 'clientY',
     scrollSize: 'scrollHeight',
-    direction: 'top'
+    direction: 'top',
   },
   horizontal: {
     offset: 'offsetWidth',
     scroll: 'scrollLeft',
     client: 'clientX',
     scrollSize: 'scrollWidth',
-    direction: 'left'
-  }
+    direction: 'left',
+  },
 } as const
