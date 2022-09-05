@@ -1,13 +1,17 @@
-import { 
+import {
   Comment,
   Fragment,
   Text,
-  defineComponent, h, VNode, withDirectives, inject 
-} from "vue"
+  defineComponent,
+  h,
+  VNode,
+  withDirectives,
+  inject,
+} from 'vue'
 
 const getFirstVNode = (node: VNode[]): VNode | null => {
   for (const child of node) {
-    if(typeof child === 'object'){
+    if (typeof child === 'object') {
       switch (child.type) {
         case Comment:
         case Text:
@@ -24,20 +28,18 @@ const getFirstVNode = (node: VNode[]): VNode | null => {
 }
 
 export const EmptyChild = defineComponent({
-  name: 'z-empty-child',
+  name: 'ZEmptyChild',
   setup(_, { slots, attrs }) {
     const defaultSlot = slots.default?.(attrs) as VNode[]
     const _vnode = getFirstVNode(defaultSlot) as VNode
-    const { triggerElement } = inject<any>('Popover',undefined)
+    const { triggerElement } = inject<any>('Popover', undefined)
     return () => {
       const vZDirective = {
         mounted(el: HTMLElement) {
           triggerElement.value = el
         },
       }
-      withDirectives(_vnode,[
-        [vZDirective]
-      ])
+      withDirectives(_vnode, [[vZDirective]])
       return h(_vnode)
     }
   },

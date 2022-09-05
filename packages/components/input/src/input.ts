@@ -28,9 +28,9 @@ export const inputProps = {
 }
 
 export const inputEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string',
-  input: (value: String) => typeof value === 'string',
-  change: (value: String) => typeof value === 'string',
+  ['update:modelValue']: (value: string) => typeof value === 'string',
+  input: (value: string) => typeof value === 'string',
+  change: (value: string) => typeof value === 'string',
   blur: (evt: FocusEvent) => evt instanceof FocusEvent,
   focus: (evt: FocusEvent) => evt instanceof FocusEvent,
 }

@@ -14,7 +14,7 @@ export const dialogProps = {
 }
 
 export const dialogEmits = {
-  ['update:modelValue']: (value: Boolean) => typeof value === 'boolean',
+  ['update:modelValue']: (value: boolean) => typeof value === 'boolean',
 }
 
 export type DialogProps = ExtractPropTypes<typeof dialogProps>

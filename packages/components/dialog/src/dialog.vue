@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import ZOverlay from '@z-ui/components/overlay'
 import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils'
-import { computed, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { dialogProps, dialogEmits } from './dialog'
 
 defineOptions({

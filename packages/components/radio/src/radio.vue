@@ -15,12 +15,12 @@
       ]"
     >
       <input
+        v-model="modelValue"
         type="radio"
         :class="ns.e('original')"
-        v-model="modelValue"
-        @change="handleChange"
         :value="props.label"
         :disabled="isDisabled"
+        @change="handleChange"
       />
       <span :class="ns.e('inner')"></span>
     </span>
@@ -46,7 +46,9 @@ const modelValue = computed({
   get() {
     return radioGroup.modelValue.value
   },
-  set(val) {},
+  set() {
+    //console.log()
+  },
 })
 const isChecked = computed(() => {
   return modelValue.value === props.label

@@ -20,7 +20,7 @@ export const useNamespace = (block: string) => {
   const m = (state: string | undefined) => {
     return state ? _bem(Namespace, block, state, '') : ''
   }
-  const is = (attribute: string, state: Boolean) => {
+  const is = (attribute: string, state: boolean) => {
     return state ? `is-${attribute}` : ''
   }
   const e = (element: string) => {

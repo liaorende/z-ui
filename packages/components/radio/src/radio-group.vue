@@ -19,7 +19,7 @@ const ns = useNamespace('radio-group')
 const modelValue = computed(() => {
   return props.modelValue
 })
-const changeEvent = (val: String) => {
+const changeEvent = (val: string) => {
   emit('update:modelValue', val)
 }
 provide('RadioGroup', {

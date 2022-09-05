@@ -22,10 +22,10 @@ export const radioGroupProps = {
 }
 
 export const radioEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string',
+  ['update:modelValue']: (value: string) => typeof value === 'string',
 }
 export const radioGroupEmits = {
-  ['update:modelValue']: (value: String) => typeof value === 'string',
+  ['update:modelValue']: (value: string) => typeof value === 'string',
 }
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>
