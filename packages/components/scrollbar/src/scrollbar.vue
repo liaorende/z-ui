@@ -15,18 +15,18 @@
       </div>
     </div>
     <bar
+      ref="barRef"
       always
       horizontal
-      ref="barRef"
       :width="barWidth + 'px'"
-      :scrollX="barScrollX"
+      :scroll-x="barScrollX"
     />
     <bar
+      ref="barRef"
       always
       vertical
-      ref="barRef"
       :height="barHeight + 'px'"
-      :scrollY="barScrollY"
+      :scroll-y="barScrollY"
     />
   </div>
 </template>
@@ -39,8 +39,8 @@ import Bar from './bar.vue'
 defineOptions({
   name: 'z-scrollbar',
 })
+defineProps(scrollbarProps)
 const ns = useNamespace('scrollbar')
-const props = defineProps(scrollbarProps)
 const emits = defineEmits(scrollbarEmits)
 const viewRef = ref<HTMLDivElement>()
 const wrapRef = ref<HTMLDivElement>()

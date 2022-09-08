@@ -15,17 +15,7 @@
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils'
-import {
-  computed,
-  onBeforeUpdate,
-  onMounted,
-  onUpdated,
-  provide,
-  reactive,
-  ref,
-  useSlots,
-  watch,
-} from 'vue'
+import { computed, onBeforeUpdate, provide, reactive, ref } from 'vue'
 import { popoverProps } from './popover'
 import { EmptyChild } from './empty-child'
 defineOptions({

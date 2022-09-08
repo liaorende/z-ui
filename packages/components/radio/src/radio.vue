@@ -32,13 +32,12 @@
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils'
 import { computed, inject } from 'vue'
-import { radioProps, radioEmits } from './radio'
+import { radioProps } from './radio'
 defineOptions({
   name: 'z-radio',
   inheritAttrs: false,
 })
 const props = defineProps(radioProps)
-const emit = defineEmits(radioEmits)
 const ns = useNamespace('radio')
 const radioGroup = inject<any>('RadioGroup', {})
 

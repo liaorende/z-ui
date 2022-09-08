@@ -6,12 +6,11 @@
 <script setup lang="ts">
 import { ZInput } from '@z-ui/components'
 import { useNamespace } from '@z-ui/utils'
-import { ref } from 'vue'
 import { selectProps } from './select'
 
 defineOptions({
   name: 'z-select',
 })
+defineProps(selectProps)
 const ns = useNamespace('select')
-const props = defineProps(selectProps)
 </script>
