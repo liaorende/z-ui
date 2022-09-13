@@ -6,7 +6,6 @@
       ns.is('checked', isChecked),
       ns.is('disabled', isDisabled),
     ]"
-    @click="onClickRoot"
   >
     <span
       :class="[
@@ -22,7 +21,6 @@
         :class="ns.e('original')"
         :value="label"
         :disabled="isDisabled"
-        @change="handleChange"
       />
       <span :class="ns.e('inner')" />
     </span>
@@ -74,11 +72,4 @@ const isChecked = computed(() => {
 const isDisabled = computed(() => {
   return checkboxGroup.disabled ? checkboxGroup.disabled : props.disabled
 })
-const onClickRoot = () => {
-  // emit('update:modelValue', !props.modelValue)
-}
-const handleChange = () => {
-  // emit('change', modelValue.value)
-  // checkboxGroup.changeEvent(modelValue.value)
-}
 </script>

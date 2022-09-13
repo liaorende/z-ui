@@ -2,4 +2,45 @@
   position: absolute;
   left: 0;
   top: 0;
+  background-color: var(--z-color-white);
+  border: 1px solid #e4e7ed;
+  padding: 12px;
+  .z-popover__arrow{
+    position: absolute;
+    transform: translate3d(0,0,0) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border: 1px solid #e4e7ed;
+    background-color: var(--z-color-white);
+    // transform: rotate(45deg);
+    box-sizing: border-box;
+    &[placement^=right]{
+      top: 50%;
+      left: -5px;
+      border-right-color: transparent!important;
+      border-top-color: transparent!important;
+      transform: translate3d(0,-50%,0) rotate(45deg);
+    }
+    &[placement^=left]{
+      top: 50%;
+      right: -5px;
+      border-left-color: transparent!important;
+      border-bottom-color: transparent!important;
+      transform: translate3d(0,-50%,0) rotate(45deg);
+    }
+    &[placement^=top]{
+      top: -5px;
+      left: 50%;
+      border-right-color: transparent!important;
+      border-bottom-color: transparent!important;
+      transform: translate3d(-50%,0,0) rotate(45deg);
+    }
+    &[placement^=bottom]{
+      bottom: -5px;
+      left: 50%;
+      border-left-color: transparent!important;
+      border-top-color: transparent!important;
+      transform: translate3d(-50%,0,0) rotate(45deg);
+    }
+  }
 }

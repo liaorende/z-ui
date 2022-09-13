@@ -10,6 +10,7 @@
   <Teleport to="body">
     <div v-show="visible" :class="[ns.b()]" :style="popoverStyle">
       <slot />
+      <span :class="[ns.e('arrow')]" :placement="placement"></span>
     </div>
   </Teleport>
 </template>

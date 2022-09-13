@@ -1,9 +1,9 @@
 <template>
-  <!-- <test-a></test-a> -->
+  <test-a></test-a>
   <!-- <test-b></test-b> -->
-  <test-c
+  <!-- <test-c
     v-model:name="name"
-  ></test-c>
+  ></test-c> -->
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';

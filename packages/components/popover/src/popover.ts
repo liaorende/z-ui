@@ -21,4 +21,11 @@ export const popoverProps = {
       return TriggerType.includes(value)
     },
   },
+  placement: {
+    type: String,
+    default: 'right',
+    validator(value: string) {
+      return placementType.includes(value)
+    },
+  },
 }

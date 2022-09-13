@@ -56,6 +56,13 @@
       </template>
       <div style="width: 80px; height: 80px; background: red">测试 popover</div>
     </z-popover>
+    <br />
+    <z-popover placement="bottom" trigger="click">
+      <template #reference>
+        <z-button>popover</z-button>
+      </template>
+      <div>测试 popover</div>
+    </z-popover>
     <z-checkbox v-model="checked" label="test" @change="test">
       aaaa
     </z-checkbox>
