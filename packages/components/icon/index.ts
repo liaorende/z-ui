@@ -1,6 +1,6 @@
-import Icon from './src/icon.vue'
 import { withInstall } from '@z-ui/utils'
+import Icon from './src/icon.vue'
 
-const ZIcon = withInstall(Icon)
+export const ZIcon = withInstall(Icon)
 
 export default ZIcon

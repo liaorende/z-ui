@@ -5,12 +5,15 @@
   "private": false,
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
+  "types": "es/components/index.d.ts",
   "scripts": {
     "build": "vite build && npm run build:css",
     "build:css": "esno packages/build/buildStyle.ts",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx ",
-    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\""
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
+    "build:types": "vue-dts-gen packages/components/button/**/*.{ts,vue}"
   },
+  "type": "module",
   "keywords": [],
   "author": "yangyi",
   "license": "ISC",
@@ -19,7 +22,8 @@
     "@vueuse/core": "^9.2.0",
     "@z-ui/components": "workspace:^1.0.0",
     "@z-ui/theme": "workspace:^1.0.0",
-    "vue": "^3.2.37"
+    "@z-ui/utils": "workspace:^1.0.0",
+    "vue": "3.2.26"
   },
   "devDependencies": {
     "@types/node": "^18.7.8",
@@ -38,6 +42,7 @@
     "unplugin-vue-define-options": "^0.8.3",
     "vite": "^2.9.15",
     "vite-plugin-dts": "^1.4.1",
+    "vue-dts-gen": "^0.3.0",
     "vue-tsc": "^0.40.1"
   }
 }

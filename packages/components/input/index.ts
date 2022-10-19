@@ -1,6 +1,8 @@
 import Input from './src/input.vue'
-import { withInstall } from '@z-ui/utils/install'
+import { withInstall } from '@z-ui/utils'
 
-const ZhsInput = withInstall(Input)
+export const ZInput = withInstall(Input)
 
-export default ZhsInput
+export default ZInput
+
+export * from './src/input'

@@ -16,7 +16,7 @@ export default defineConfig({
     rollupOptions: {
       //忽略打包vue文件
       external: ['vue', '@element-plus/icons-vue'],
-      input: ['packages/components/index.ts'],
+      input: ['packages/z-ui/index.ts'],
       output: [
         {
           format: 'es',
@@ -47,6 +47,10 @@ export default defineConfig({
   plugins: [
     vue(),
     defineOptions(),
-    dts({ outputDir: ['dist/es', 'dist/lib'] }),
+    dts({
+      skipDiagnostics: true,
+      logDiagnostics: true,
+      outputDir: ['dist/es', 'dist/lib'],
+    }),
   ],
 })

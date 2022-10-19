@@ -1,6 +1,8 @@
 import Select from './src/select.vue'
 import { withInstall } from '@z-ui/utils'
 
-const ZSelect = withInstall(Select)
+export const ZSelect = withInstall(Select)
 
 export default ZSelect
+
+export * from './src/select'

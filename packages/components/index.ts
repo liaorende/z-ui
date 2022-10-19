@@ -1,50 +1,10 @@
-import Button from './button'
-import Input from './input'
-import Icon from './icon'
-import { Checkbox, CheckboxGroup } from './checkbox'
-import { Radio, RadioGroup } from './radio'
-import Dialog from './dialog'
-import Overlay from './overlay'
-import Select from './select'
-import Scrollbar from './scrollbar'
-import Popover from './popover'
-
-import type { App } from 'vue'
-
-// 组件列表
-const components = [
-  Button,
-  Input,
-  Icon,
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-  Dialog,
-  Overlay,
-  Select,
-  Scrollbar,
-  Popover,
-]
-// 使用所有组件
-const install = (app: App) => {
-  components.forEach((component) => {
-    app.component(component.name, component)
-  })
-}
-export {
-  Button as ZButton,
-  Input as ZInput,
-  Icon as ZIcon,
-  Checkbox as ZCheckbox,
-  CheckboxGroup as ZCheckboxGroup,
-  Radio as ZRadio,
-  RadioGroup as ZRadioGroup,
-  Dialog as ZDialog,
-  Overlay as ZOverlay,
-  Select as ZSelect,
-  Scrollbar as ZScrollbar,
-  Popover as ZPopover,
-  install,
-}
-export default install
+export * from './button'
+export * from './checkbox'
+export * from './dialog'
+export * from './icon'
+export * from './input'
+export * from './overlay'
+export * from './popover'
+export * from './radio'
+export * from './scrollbar'
+export * from './select'
