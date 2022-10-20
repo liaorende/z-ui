@@ -48,7 +48,7 @@ export default defineConfig({
     vue(),
     defineOptions(),
     dts({
-      skipDiagnostics: true,
+      skipDiagnostics: false,
       logDiagnostics: true,
       outputDir: ['dist/es', 'dist/lib'],
     }),
