@@ -7,7 +7,7 @@
   "module": "es/components/index.js",
   "types": "es/components/index.d.ts",
   "scripts": {
-    "build": "vite build && npm run build:css",
+    "build": "pnpm run --filter=@z-ui/components build",
     "build:css": "esno packages/build/buildStyle.ts",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx ",
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
@@ -18,31 +18,8 @@
   "author": "yangyi",
   "license": "ISC",
   "dependencies": {
-    "@element-plus/icons-vue": "^2.0.9",
-    "@vueuse/core": "^9.2.0",
     "@z-ui/components": "workspace:^1.0.0",
     "@z-ui/theme": "workspace:^1.0.0",
-    "@z-ui/utils": "workspace:^1.0.0",
-    "vue": "3.2.26"
-  },
-  "devDependencies": {
-    "@types/node": "^18.7.8",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "@vitejs/plugin-vue": "^2.3.4",
-    "cpy": "^9.0.1",
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.4.0",
-    "fast-glob": "^3.2.11",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.4",
-    "typescript": "^4.7.4",
-    "unplugin-vue-define-options": "^0.8.3",
-    "vite": "^2.9.15",
-    "vite-plugin-dts": "^1.4.1",
-    "vue-dts-gen": "^0.3.0",
-    "vue-tsc": "^0.40.1"
+    "@z-ui/utils": "workspace:^1.0.0"
   }
 }

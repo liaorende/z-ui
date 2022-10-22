@@ -2,6 +2,7 @@
 example/
 packages/
 docs/
+.vscode/
 
 # 忽略指定文件
 package.json
@@ -12,3 +13,6 @@ tsconfig.node.json
 vite.config.ts
 env.d.ts
 .gitignore
+.eslintignore
+.eslintrc.json
+.prettierrc.json

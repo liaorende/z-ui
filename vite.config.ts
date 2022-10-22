@@ -9,7 +9,7 @@ export default defineConfig({
     outDir: 'dist',
     // cssCodeSplit: true,
     lib: {
-      entry: 'packages/components/index.ts',
+      entry: 'packages/z-ui/index.ts',
       name: 'z-ui',
     },
     minify: false,

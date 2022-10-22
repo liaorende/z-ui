@@ -31,7 +31,7 @@
   </Transition>
 </template>
 <script setup lang="ts">
-import ZOverlay from '@z-ui/components/overlay'
+import ZOverlay from '../../overlay'
 import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils'
 import { ref, watch } from 'vue'
 import { dialogProps, dialogEmits } from './dialog'

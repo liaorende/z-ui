@@ -5,5 +5,11 @@
   "main": "index.ts",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.9"
+  },
+  "devDependencies": {
+    "vue": "3.2.36"
+  }
 }
