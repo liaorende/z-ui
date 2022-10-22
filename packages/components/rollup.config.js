@@ -18,7 +18,7 @@ export default defineConfig({
   output: {
     dir: './dist',
     format: 'esm',
-    // preserveModules: true,
+    preserveModules: true,
   },
   external: ['vue', '@element-plus/icons-vue'],
   plugins: [  resolve(), typescript(), defineOptions(), vue()],
