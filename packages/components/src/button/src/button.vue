@@ -23,9 +23,9 @@
 import { buttonProps } from './button'
 import { useNamespace } from '@z-ui/utils'
 import ZIcon from '../../icon'
-defineOptions({
-  name: 'z-button'
-})
+// defineOptions({
+//   name: 'z-button'
+// })
 const ns = useNamespace('button')
 const props = defineProps(buttonProps)
 const emit = defineEmits(['click'])
