@@ -12,14 +12,10 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    "types": ["unplugin-vue-define-options/macros-global"]
   },
   "include": [
-    "packages/**/*.ts",
-    // "packages/**/*.d.ts",
-    "packages/**/*.tsx",
-    "packages/**/*.vue",
-  ],
-  "references": [
-    { "path": "./tsconfig.node.json" }
+    "src",
+    "env.d.ts"
   ]
 }
