@@ -20,6 +20,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.9",
     "@vueuse/core": "^9.2.0",
+    "@z-ui/build": "workspace:^1.0.0",
     "@z-ui/components": "workspace:^1.0.0",
     "@z-ui/theme": "workspace:^1.0.0",
     "@z-ui/utils": "workspace:^1.0.0",
@@ -40,9 +41,15 @@
     "sass": "^1.54.4",
     "typescript": "^4.7.4",
     "unplugin-vue-define-options": "^0.8.3",
-    "vite": "^2.9.15",
     "vite-plugin-dts": "^1.4.1",
     "vue-dts-gen": "^0.3.0",
-    "vue-tsc": "^0.40.1"
+    "vue-tsc": "1.0.8"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vite"
+      ]
+    }
   }
 }

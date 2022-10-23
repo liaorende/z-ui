@@ -1,0 +1,35 @@
+{
+  "name": "@z-ui/build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "gulp --require sucrase/register/ts -f gulpfile.ts",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@vitejs/plugin-vue": "^2.3.4",
+    "@z-ui/components": "workspace:^1.0.0",
+    "@z-ui/utils": "workspace:^1.0.0",
+    "esbuild": "^0.15.12",
+    "fast-glob": "^3.2.11",
+    "gulp": "^4.0.2",
+    "rollup": "2.78.0",
+    "rollup-plugin-esbuild": "^4.10.1",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "sucrase": "^3.28.0",
+    "ts-morph": "^16.0.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.9",
+    "vite": "2.9.9",
+    "vue": "3.2.26"
+  }
+}

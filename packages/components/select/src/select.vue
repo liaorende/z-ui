@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ZInput } from '@z-ui/components'
+import { ZInput } from '@z-ui/components/input'
 import { useNamespace } from '@z-ui/utils'
 import { selectProps } from './select'
 

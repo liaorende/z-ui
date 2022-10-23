@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import { buttonProps } from './button'
 import { useNamespace } from '@z-ui/utils'
-import ZIcon from '@z-ui/components/icon'
+import { ZIcon } from '@z-ui/components/icon'
 defineOptions({
   name: 'z-button',
 })
