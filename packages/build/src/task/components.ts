@@ -17,30 +17,35 @@ export const buildComponents = async () => {
     })
   )
   const bundle = await rollup({
-    input,
+    input: resolve(__dirname, './button.vue'),
     plugins: [
       defineOptions(),
       vue(),
       nodeResolve({
         extensions: ['.ts'],
       }),
-      esbuild(),
-      typescript(),
+      // esbuild(),
+      typescript({
+        tsconfig: 'tsconfig.build.json',
+      }),
     ],
     external: ['vue', '@element-plus/icons-vue'],
   })
-  await writeBundles(
-    bundle,
-    buildConfigEntries.map(([module, config]): OutputOptions => {
-      return {
-        format: config.format,
-        dir: config.output.path,
-        exports: module === 'cjs' ? 'named' : undefined,
-        preserveModules: true,
-        preserveModulesRoot: '/yyyy',
-        sourcemap: true,
-        entryFileNames: `[name].${config.ext}`,
-      }
-    })
-  )
+  bundle.write({
+    file: resolve(__dirname, '../../output', 'bundle.js'),
+  })
+  // await writeBundles(
+  //   bundle,
+  //   buildConfigEntries.map(([module, config]): OutputOptions => {
+  //     return {
+  //       format: config.format,
+  //       dir: config.output.path,
+  //       exports: module === 'cjs' ? 'named' : undefined,
+  //       preserveModules: true,
+  //       preserveModulesRoot: '/yyyy',
+  //       sourcemap: true,
+  //       entryFileNames: `[name].${config.ext}`,
+  //     }
+  //   })
+  // )
 }

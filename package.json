@@ -7,7 +7,7 @@
   "module": "es/components/index.js",
   "types": "es/components/index.d.ts",
   "scripts": {
-    "build": "vite build && npm run build:css",
+    "build": "pnpm run -C packages/build start",
     "build:css": "esno packages/build/buildStyle.ts",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx ",
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
@@ -24,10 +24,13 @@
     "@z-ui/components": "workspace:^1.0.0",
     "@z-ui/theme": "workspace:^1.0.0",
     "@z-ui/utils": "workspace:^1.0.0",
+    "gulp": "^4.0.2",
     "vue": "3.2.26"
   },
   "devDependencies": {
+    "@types/gulp": "^4.0.9",
     "@types/node": "^18.7.8",
+    "@types/undertaker": "^1.2.8",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "@vitejs/plugin-vue": "^2.3.4",
