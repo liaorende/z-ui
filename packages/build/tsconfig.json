@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.declaration.json",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true
+    }
+  }
+}

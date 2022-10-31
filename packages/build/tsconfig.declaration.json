@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/types",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+  },
+  "include": ["../**/*.ts", "../**/*.vue", "../../typings/env.d.ts"],
+  "exclude": ["../build","../../node_modules"]
+}
