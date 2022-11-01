@@ -1,6 +1,6 @@
 import { series, parallel } from 'gulp'
-import { runTask } from './src'
+import { runTask, buildComponents, generateTypes } from './src'
 
-export default parallel(runTask('buildComponents'), runTask('generateTypes'))
+export default parallel(buildComponents, generateTypes)
 
-export * from './src'
+// export * from './src'

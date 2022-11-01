@@ -8,7 +8,6 @@ export const run = async (command: string, cwd: string) =>
     const app = spawn(cmd, args, {
       cwd,
     })
-    // console.log('app--', app)
 
     const onProcessExit = () => app.kill('SIGHUP')
 
