@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.ts",
   "module": "index.ts",
+  "types": "index.d.ts",
   "keywords": [],
   "author": "",
   "license": "ISC"

@@ -1,12 +1,11 @@
 {
   "name": "vue3-yytest",
-  "version": "1.0.7",
+  "version": "1.0.14",
   "description": "",
   "private": false,
-  "main": "lib/components/index.js",
-  "module": "es/components/index.js",
-  "types": "es/components/index.d.ts",
-  "type": "module",
+  "main": "lib/z-ui/index.js",
+  "module": "es/z-ui/index.mjs",
+  "types": "es/z-ui/index.d.ts",
   "keywords": ["vue", "component library"],
   "author": "yangyi",
   "license": "ISC"

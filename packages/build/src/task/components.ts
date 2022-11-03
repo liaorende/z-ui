@@ -1,4 +1,3 @@
-import { copy } from 'fs-extra'
 import { resolve } from 'path'
 import { rollup, OutputOptions } from 'rollup'
 import glob from 'fast-glob'
@@ -6,7 +5,7 @@ import defineOptions from 'unplugin-vue-define-options/rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from '@vitejs/plugin-vue'
 import esbuild from 'rollup-plugin-esbuild'
-import { excludeFiles, writeBundles, buildConfigEntries, run } from '../util'
+import { excludeFiles, writeBundles, buildConfigEntries } from '../util'
 
 export const buildComponents = async () => {
   const input = excludeFiles(
@@ -41,19 +40,5 @@ export const buildComponents = async () => {
         entryFileNames: `[name].${config.ext}`,
       }
     })
-  )
-}
-
-export const generateTypes = async () => {
-  await run(`pnpm run types`, resolve(__dirname, '../../../', 'build'))
-  await copy(
-    resolve(__dirname, '../../dist/', 'types'),
-    resolve(__dirname, '../../dist/', 'es'),
-    { recursive: true }
-  )
-  await copy(
-    resolve(__dirname, '../../dist/', 'types'),
-    resolve(__dirname, '../../dist/', 'lib'),
-    { recursive: true }
   )
 }
