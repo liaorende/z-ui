@@ -11,7 +11,7 @@
     "start": "gulp",
     "stub": "unbuild --stub",
     "check": "vue-tsc --noEmit",
-    "types": "vue-tsc -p tsconfig.declaration.json"
+    "types": "vue-tsc -p tsconfig.declaration.json && tsc-alias -p tsconfig.declaration.json"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^23.0.2",

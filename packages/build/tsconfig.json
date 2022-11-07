@@ -3,7 +3,8 @@
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "lib": ["ESNext"]
     }
   }
 }

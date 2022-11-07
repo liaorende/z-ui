@@ -4,7 +4,11 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "jsx": "preserve",
+    "paths": {
+      "@z-ui/*": ["../../packages/*"]
+    }
   },
+  // "files": ["src/test1.ts","../../typings/env.d.ts"],
   "include": ["../**/*.ts", "../**/*.vue", "../../typings/env.d.ts"],
   "exclude": ["../build","../../node_modules"]
 }

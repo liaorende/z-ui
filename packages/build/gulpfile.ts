@@ -1,6 +1,6 @@
 import { series, parallel } from 'gulp'
-import { buildComponents, generateTypes, copyPkg } from './src'
+import { clean, buildComponents, generateTypes, copyPkg } from './src'
 
-export default series(parallel(buildComponents, generateTypes), copyPkg)
+export default series(clean, parallel(buildComponents, generateTypes), copyPkg)
 
 // export * from './src'

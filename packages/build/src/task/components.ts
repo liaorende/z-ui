@@ -6,6 +6,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from '@vitejs/plugin-vue'
 import esbuild from 'rollup-plugin-esbuild'
 import { excludeFiles, writeBundles, buildConfigEntries } from '../util'
+import { alias } from '../plugins/build-alias'
 
 export const buildComponents = async () => {
   const input = excludeFiles(
@@ -18,10 +19,11 @@ export const buildComponents = async () => {
   const bundle = await rollup({
     input,
     plugins: [
+      // alias(),
       defineOptions(),
       vue(),
       nodeResolve({
-        extensions: ['.ts'],
+        extensions: ['.mjs', '.ts'],
       }),
       esbuild(),
     ],
