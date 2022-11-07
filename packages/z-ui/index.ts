@@ -1,2 +1,2 @@
 export { install as default } from './installer'
-export * from '../components'
+export * from '@z-ui/components'
