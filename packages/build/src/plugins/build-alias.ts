@@ -4,9 +4,9 @@ const PKG_PREFIX = '@z-ui'
 const PKG_NAME = 'z-ui'
 
 export function alias(): Plugin {
-  const themeChalk = 'theme-chalk'
-  const sourceThemeChalk = `${PKG_PREFIX}/` as const
-  const bundleThemeChalk = `${PKG_NAME}/` as const
+  const themeChalk = 'theme'
+  const sourceThemeChalk = `${PKG_PREFIX}/${themeChalk}` as const
+  const bundleThemeChalk = `${PKG_NAME}/${themeChalk}` as const
 
   return {
     name: 'z-alias-plugin',

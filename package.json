@@ -25,11 +25,14 @@
     "@z-ui/theme": "workspace:^1.0.0",
     "@z-ui/utils": "workspace:^1.0.0",
     "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "vue": "3.2.26"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.9",
+    "@types/gulp-rename": "^2.0.1",
+    "@types/gulp-sass": "^5.0.0",
     "@types/node": "^18.7.8",
     "@types/undertaker": "^1.2.8",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -42,6 +45,7 @@
     "execa": "^6.1.0",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
+    "gulp-rename": "^2.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.4",
     "tsc-alias": "^1.7.0",

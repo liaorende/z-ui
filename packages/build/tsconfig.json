@@ -4,7 +4,9 @@
     "compilerOptions": {
       "module": "CommonJS",
       "esModuleInterop": true,
+      "moduleResolution": "node",
       "lib": ["ESNext"]
-    }
+    },
+    "esm": true
   }
 }

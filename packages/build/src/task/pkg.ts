@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { copy, copyFile, remove } from 'fs-extra'
+import { copyFile, remove } from 'fs-extra'
 
 export const copyPkg = async () => {
   await copyFile(
