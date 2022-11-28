@@ -7,6 +7,7 @@ import vue from '@vitejs/plugin-vue'
 import esbuild from 'rollup-plugin-esbuild'
 import { excludeFiles, writeBundles, buildConfigEntries } from '../util'
 import { alias } from '../plugins/build-alias'
+// import alias from '@rollup/plugin-alias'
 
 export const buildComponents = async () => {
   const input = excludeFiles(
@@ -19,7 +20,7 @@ export const buildComponents = async () => {
   const bundle = await rollup({
     input,
     plugins: [
-      // alias(),
+      alias(),
       defineOptions(),
       vue(),
       nodeResolve({
@@ -28,6 +29,7 @@ export const buildComponents = async () => {
       esbuild(),
     ],
     external: ['vue', '@element-plus/icons-vue'],
+    treeshake: false,
   })
   await writeBundles(
     bundle,

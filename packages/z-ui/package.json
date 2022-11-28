@@ -1,10 +1,17 @@
 {
   "name": "vue3-yytest",
-  "version": "1.0.16",
+  "version": "1.1.0",
   "description": "",
   "private": false,
   "main": "lib/z-ui/index.js",
   "module": "es/z-ui/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./lib/z-ui/index.js",
+      "import": "./es/z-ui/index.mjs"
+    },
+    "./*": "./*"
+  },
   "types": "es/z-ui/index.d.ts",
   "keywords": ["vue", "component library"],
   "author": "yangyi",

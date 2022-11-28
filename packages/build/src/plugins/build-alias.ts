@@ -1,7 +1,7 @@
 import type { Plugin } from 'rollup'
 
 const PKG_PREFIX = '@z-ui'
-const PKG_NAME = 'z-ui'
+const PKG_NAME = 'vue3-yytest'
 
 export function alias(): Plugin {
   const themeChalk = 'theme'
