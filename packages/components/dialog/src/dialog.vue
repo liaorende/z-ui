@@ -32,6 +32,7 @@
 </template>
 <script setup lang="ts">
 import ZOverlay from '@z-ui/components/overlay'
+import ZIcon from '@z-ui/components/icon'
 import { useNamespace, useZIndex, CloseComponents } from '@z-ui/utils'
 import { ref, watch } from 'vue'
 import { dialogProps, dialogEmits } from './dialog'

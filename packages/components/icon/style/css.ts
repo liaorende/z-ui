@@ -1,1 +1,1 @@
-import '@z-ui/theme/src/icon.scss'
+import '@z-ui/components/base/style/css'

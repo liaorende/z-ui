@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { useNamespace, filterAttrs } from '@z-ui/utils'
 import { computed, ref, StyleValue, useAttrs, useSlots } from 'vue'
-
+import ZIcon from '@z-ui/components/icon'
 import { inputProps, inputEmits } from './input'
 defineOptions({
   name: 'z-input',
