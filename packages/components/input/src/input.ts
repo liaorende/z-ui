@@ -1,4 +1,5 @@
 import type { ExtractPropTypes } from 'vue'
+import { iconPropType } from '@z-ui/utils'
 
 export const inputProps = {
   modelValue: {
@@ -10,10 +11,10 @@ export const inputProps = {
     default: '请输入内容',
   },
   prefixIcon: {
-    type: String,
+    type: iconPropType,
   },
   suffixIcon: {
-    type: String,
+    type: iconPropType,
   },
   inputStyle: {
     type: Object,
