@@ -1,9 +1,10 @@
 <template>
-  <z-button plain>按钮</z-button>
-  <z-button plain disabled>按钮测试</z-button>
+  <z-radio v-model="radio">按钮</z-radio>
   <!-- <el-button>test</el-button>
   <el-button type="primary">test</el-button> -->
 </template>
 <script setup lang="ts">
-// import { Button as ZButton } from 'vue3-yytest'
+import { ref } from 'vue'
+
+const radio = ref('selected and disabled')
 </script>
