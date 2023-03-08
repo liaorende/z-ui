@@ -6,13 +6,13 @@
     <br />
     <z-button>test</z-button>
     <z-button disabled>test 123</z-button><br />
-    <z-button size="small" icon="Search">搜索</z-button>
+    <z-button size="small" :icon="Search">搜索</z-button>
     <z-button size="small">
       搜索<z-icon class="z-icon--right">
         <Search />
       </z-icon> </z-button
     ><br />
-    <z-button plain icon="Search">按钮</z-button>
+    <z-button plain :icon="Search">按钮</z-button>
     <z-button plain>
       搜索<z-icon class="z-icon--right">
         <Search />
@@ -33,7 +33,7 @@
       @input="onInput"
       @change="onChange"
       class="custom-input"
-      prefixIcon="Search"
+      :prefixIcon="Search"
       style="width: 190px"
       showWordLimit
       maxlength="30"
@@ -44,7 +44,7 @@
       @input="onInput"
       @change="onChange"
       class="custom-input"
-      suffixIcon="Search"
+      :suffixIcon="Search"
       style="width: 190px"
       showWordLimit
       maxlength="20"
@@ -104,6 +104,7 @@
   </z-scrollbar>
 </template>
 <script setup lang="ts">
+import { Search } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 
 const value = ref('123')

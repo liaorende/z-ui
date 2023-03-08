@@ -1,10 +1,10 @@
 <template>
-  <!-- <test-a></test-a> -->
+  <test-a></test-a>
   <!-- <test-b></test-b> -->
   <!-- <test-c
     v-model:name="name"
   ></test-c> -->
-  <test-d></test-d>
+  <!-- <test-d></test-d> -->
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
