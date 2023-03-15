@@ -1,6 +1,11 @@
 <template>
   <div :class="[ns.b()]">
-    <z-input :readonly="readonly" />
+    <z-popover placement="left" trigger="click">
+      <template #reference>
+        <z-input :readonly="readonly" />
+      </template>
+      <slot />
+    </z-popover>
   </div>
 </template>
 <script setup lang="ts">

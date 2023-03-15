@@ -1,25 +1,11 @@
 {
-  "name": "vue3-yytest",
-  "version": "1.1.6",
+  "name": "@z-ui/module",
+  "version": "1.0.0",
   "description": "",
-  "private": false,
-  "main": "lib/z-ui/index.js",
-  "module": "es/z-ui/index.mjs",
-  "exports": {
-    ".": {
-      "require": "./lib/z-ui/index.js",
-      "import": "./es/z-ui/index.mjs"
-    },
-    "./*": "./*"
-  },
-  "sideEffects": [
-    "theme/**/*.css",
-    "theme/src/**/*.scss",
-    "es/components/*/style/*",
-    "lib/components/*/style/*"
-  ],
-  "types": "es/z-ui/index.d.ts",
-  "keywords": ["vue", "component library"],
-  "author": "yangyi",
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.d.ts",
+  "keywords": [],
+  "author": "",
   "license": "ISC"
 }

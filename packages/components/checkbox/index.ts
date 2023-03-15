@@ -5,5 +5,4 @@ import { withInstall } from '@z-ui/utils'
 export const ZCheckbox = withInstall(Checkbox)
 export const ZCheckboxGroup = withInstall(CheckboxGroup)
 
-export default ZCheckbox
 export * from './src/checkbox'

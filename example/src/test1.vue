@@ -100,7 +100,9 @@
         <z-button @click="dialogVisible2 = true">确认</z-button>
       </template>
     </z-dialog>
-    <z-select />
+    <!-- <z-select>
+      <z-select-option :value="666" />
+    </z-select> -->
   </z-scrollbar>
 </template>
 <script setup lang="ts">

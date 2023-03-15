@@ -8,7 +8,12 @@
     <slot name="reference" />
   </empty-child>
   <Teleport to="body">
-    <div v-show="visible" :class="[ns.b()]" :style="popoverStyle">
+    <div
+      v-show="visible"
+      ref="popoverContent"
+      :class="[ns.b()]"
+      :style="popoverStyle"
+    >
       <slot />
       <span :class="[ns.e('arrow')]" :placement="placement"></span>
     </div>
@@ -16,7 +21,7 @@
 </template>
 <script setup lang="ts">
 import { useNamespace } from '@z-ui/utils'
-import { computed, onBeforeUpdate, provide, reactive, ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref, watch } from 'vue'
 import { popoverProps } from './popover'
 import { EmptyChild } from './empty-child'
 defineOptions({
@@ -25,6 +30,7 @@ defineOptions({
 const ns = useNamespace('popover')
 const props = defineProps(popoverProps)
 const triggerElement = ref()
+const popoverContent = ref()
 const clientRect = reactive({ left: 0, top: 0 })
 const popoverStyle = computed(() => {
   return {
@@ -34,8 +40,33 @@ const popoverStyle = computed(() => {
 })
 const getTriggerPositon = () => {
   const { x, y, width, height } = triggerElement.value.getBoundingClientRect()
-  clientRect.left = x + width + window.scrollX
-  clientRect.top = y + height + window.scrollY
+  const { width: contentWidth, height: contentHeight } =
+    popoverContent.value.getBoundingClientRect()
+  const offsetArrowSize = 10
+  const offsetX = props.placement.indexOf('left')
+    ? props.placement.indexOf('right')
+      ? 0
+      : width + offsetArrowSize
+    : -(contentWidth + offsetArrowSize)
+  // const
+  const offsetY = props.placement.indexOf('top')
+    ? props.placement.indexOf('bottom')
+      ? 0
+      : height + offsetArrowSize
+    : -(contentHeight + offsetArrowSize)
+
+  // switch (props.placement) {
+  //   case 'top':
+  //     offsetX = width
+  //     offsetY =
+  //     break
+  //   default:
+  //     break
+  // }
+  console.log('offsetX--', offsetX)
+  console.log('offsetY--', offsetY)
+  clientRect.left = x + window.scrollX + offsetX
+  clientRect.top = y + window.scrollY + offsetY
 }
 const visible = ref(false)
 const onToggle = (value?: boolean) => {
@@ -57,10 +88,16 @@ const onMouseleave = () => {
     onToggle(false)
   }
 }
-
-onBeforeUpdate(() => {
-  getTriggerPositon()
+watch(visible, (val) => {
+  if (val) {
+    nextTick(() => {
+      getTriggerPositon()
+    })
+  }
 })
+// onUpdated(() => {
+//   getTriggerPositon()
+// })
 
 provide('Popover', {
   triggerElement,

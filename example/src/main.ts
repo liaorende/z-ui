@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ZUi from '@z-ui/build/dist'
+import ZUi from '@z-ui/module'
 import '@z-ui/theme'
 
 const app = createApp(App)

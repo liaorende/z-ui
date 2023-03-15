@@ -4,3 +4,9 @@ export const selectProps = {
     default: true,
   },
 }
+export const selectOptionProps = {
+  value: {
+    type: String,
+    default: '',
+  },
+}
